@@ -18,5 +18,5 @@ Enemy objects instantiated (with health,dmg), use inheritance for different kind
 Abstract Classes-Have enemies class with no default method, it is dealt with later whenever we want, monsters have different attacks and "sounds"
 
 Testing
--test enemies + player are taking damage
--things are dying properly
+- test enemies + player are taking damage
+- things are dying properly
