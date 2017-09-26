@@ -1,2 +1,4 @@
 # Operation-Eliminate-SVN
-REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+Things to do:
+
+- Start
