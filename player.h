@@ -2,8 +2,9 @@
 #define PLAYER_H
 
 #include <string>
+#include "gameobject.h"
 
-class player{
+class player :public gameobject{
 public:
 
 	//
@@ -12,16 +13,16 @@ public:
 
 	//constant state variables
 	std::string name;
-	int hpstat=1;
-	int atkstat=1;
-	int defstat=1;
-	int spdstat=1;
+	int hpstat;
+	int atkstat;
+	int defstat;
+	int spdstat;
 
 	//battle variables
-	int hp=1;
-	int atk=1;
-	int def=1;
-	int spd=1;
+	int hp;
+	int atk;
+	int def;
+	int spd;
 	bool isdead=0;
 
 	//
@@ -34,15 +35,15 @@ public:
 
 	//getter functions
 	std::string getname();
-	void gethpstat();
-	void getatkstat();
-	void getdefstat();
-	void getspdstat();
+	int gethpstat();
+	int getatkstat();
+	int getdefstat();
+	int getspdstat();
 
-	void getcurrenthp();
-	void getcurrentatk();
-	void getcurrentdef();
-	void getcurrentspd();
+	int getcurrenthp();
+	int getcurrentatk();
+	int getcurrentdef();
+	int getcurrentspd();
 
 	//setter functions
 	void changename(std::string newname);
@@ -50,6 +51,15 @@ public:
 	void changeatkstat(int newatk);
 	void changedefstat(int newdef);
 	void changespdstat(int newspd);
+
+	//attack functions
+	void basicattack();
+	void attack1();
+	void attack2();
+	void attack3();
+	void attack4();
+
+	//destructor
 	~player();
 
 };

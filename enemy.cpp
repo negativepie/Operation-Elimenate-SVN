@@ -2,37 +2,24 @@
 #include <string>
 
 enemy::enemy(){
-	HP=1;
-	MP=1;
-
+	hp=1;
+	mp=1;
 	atk=1;
 	sp_atk=1;
-
 	sp_def=1;
 	def=1;
-
 	spd=1;
-
-	name="?";
-
+	name="missingname";
 	alive=true;
 }
 
-enemy::set_name(std::string pname){
-	name=pname;
+void enemy::changename(std::string newname){
+	name=newname;
 }
 
-enemy::check_dead(){
-	if(HP<1){
-		alive=false;
-	}
+std::string enemy::getname(){
+	return name;
 }
-
-enemy::take_dmg(int damage){
-	HP=HP-damage;
-}
-
-
 
 enemy::~enemy(){
 

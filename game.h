@@ -17,6 +17,8 @@ public:
 	void gameIntro();
 	void gamePause();
 	void gameOver();
+
+	//battle functions
 };
 
 #endif //GAME_H

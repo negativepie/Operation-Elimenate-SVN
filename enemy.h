@@ -1,31 +1,35 @@
-#ifndef enemy_H
-#define enemy_H
-#include <string>
+#ifndef ENEMY_H
+#define ENEMY_H
 
-class enemy{
+#include <string>
+#include "gameobject.h"
+
+class enemy :public gameobject{
 
 public:
 	enemy();
 
-	int HP;
-	int MP;
-
+	int hp;
+	int mp;
 	int atk;
 	int sp_atk;
-
 	int sp_def;
 	int def;
-	
 	int spd;
 	std::string name;
 
 	bool alive;
 
-	set_name(std::string pname);
-	check_dead();
-	take_dmg(int damage);
+	void changename(std::string newname);
+	std::string getname();
+	void basicattack();
+	void attack1();
+	void attack2();
+	void attack3();
+	void attack4();
 
-  ~enemy();
+ 	~enemy();
+
 };
 
-#endif//enemy_H
+#endif //ENEMY_H

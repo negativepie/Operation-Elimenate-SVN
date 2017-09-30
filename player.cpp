@@ -3,7 +3,11 @@
 #include <iostream>
 
 player::player(){
-
+	name="missingname";
+	hpstat=1;
+	atkstat=1;
+	defstat=1;
+	spdstat=1;
 }
 
 player::player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd){
@@ -20,38 +24,38 @@ std::string player::getname(){
 	return name;
 }
 
-void player::gethpstat(){
-	std::cout << hpstat;
+int player::gethpstat(){
+	return hpstat;
 }
 
-void player::getatkstat(){
-	std::cout << atkstat;
+int player::getatkstat(){
+	return atkstat;
 }
 
-void player::getdefstat(){
-	std::cout << defstat;
+int player::getdefstat(){
+	return defstat;
 }
 
-void player::getspdstat(){
-	std::cout << spdstat;
+int player::getspdstat(){
+	return spdstat;
 }
 
 
 
-void player::getcurrenthp(){
-	std::cout << hp;
+int player::getcurrenthp(){
+	return hp;
 }
 
-void player::getcurrentatk(){
-	std::cout << atk;
+int player::getcurrentatk(){
+	return atk;
 }
 
-void player::getcurrentdef(){
-	std::cout << def;
+int player::getcurrentdef(){
+	return def;
 }
 
-void player::getcurrentspd(){
-	std::cout << spd;
+int player::getcurrentspd(){
+	return spd;
 }
 
 
@@ -75,6 +79,30 @@ void player::changedefstat(int newdef){
 void player::changespdstat(int newspd){
 	spdstat=newspd;
 }
+
+
+
+void player::basicattack(){
+
+}
+
+void player::attack1(){
+
+}
+
+void player::attack2(){
+
+}
+
+void player::attack3(){
+
+}
+
+void player::attack4(){
+
+}
+
+
 
 player::~player(){
 
