@@ -13,8 +13,11 @@ public:
 
 	int atknumber;
 	bool ischoosing;
-	gameobject battlearray[2];
+	gameobject *battlearray;
 
+
+
+	//gameobject battlearray[2];
 	//
 	//functions
 	//
