@@ -8,6 +8,15 @@ battle::battle(){
 battle::battle(player user, enemy enemy1){
 	battlearray[0]=user;
 	battlearray[1]=enemy1;
+	currentturn=0;
+	currentlyattacking=0;
+	participants=2;
+}
+
+void battle::battleturn(){
+	currentturn++;
+	currentlyattacking=currentturn%(participants-1);
+	std::cout << currentturn << std::endl;
 }
 
 void battle::chooseatk(){
@@ -50,4 +59,5 @@ void battle::chooseatk(){
 			break;
 		}
 	}
+	battleturn();
 }

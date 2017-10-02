@@ -12,6 +12,9 @@ public:
 	//
 
 	int atknumber;
+	int currentturn;
+	int currentlyattacking;
+	int participants;
 	bool ischoosing;
 	gameobject battlearray[2];
 
@@ -22,6 +25,7 @@ public:
 	battle();
 	battle(player user, enemy enemy1);
 	void chooseatk();
+	void battleturn();
 
 };
 
