@@ -35,6 +35,7 @@ void battle::chooseatk(){
 			battlearray[1].takedmg(0);
 			battlearray[0].basicattack();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
+			ischoosing=true;
 			break;
 		}
 
@@ -43,6 +44,7 @@ void battle::chooseatk(){
 			battlearray[1].takedmg(1);
 			battlearray[0].attack1();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
+			ischoosing=true;
 			break;
 		}
 
@@ -51,6 +53,7 @@ void battle::chooseatk(){
 			battlearray[1].takedmg(2);
 			battlearray[0].attack2();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
+			ischoosing=true;
 			break;
 		}
 
@@ -59,6 +62,7 @@ void battle::chooseatk(){
 			battlearray[1].takedmg(3);
 			battlearray[0].attack3();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
+			ischoosing=true;
 			break;
 		}
 
@@ -67,6 +71,7 @@ void battle::chooseatk(){
 			battlearray[1].takedmg(4);
 			battlearray[0].attack4();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
+			ischoosing=true;
 			break;
 		}
 	}
