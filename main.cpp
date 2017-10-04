@@ -18,6 +18,7 @@ int main(){
 	battle firstbattle = battle(reimu,basicenemy);
 	cout << "you are now in a battle with a " << basicenemy.getname() << endl;
 	firstbattle.chooseatk();
+	cout << reimu.getname() << "you are now in a battle with a " << basicenemy.getname() << endl;
 
 
 	/*
