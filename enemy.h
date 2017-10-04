@@ -28,6 +28,9 @@ public:
 	void attack3();
 	void attack4();
 
+	void take_dmg(int n);
+	int check_hp();
+
  	~enemy();
 
 };

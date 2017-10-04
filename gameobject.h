@@ -40,6 +40,7 @@ public:
 	//death check function and destructor
 	bool dead();
 	void takedmg(int dmg);
+	int check_hp();
 
 };
 
