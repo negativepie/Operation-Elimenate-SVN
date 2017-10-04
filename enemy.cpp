@@ -1,5 +1,6 @@
 #include "enemy.h"
 #include <string>
+#include <iostream>
 
 enemy::enemy(){
 	hp=50;

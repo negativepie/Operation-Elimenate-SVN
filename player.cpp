@@ -80,30 +80,6 @@ void player::changespdstat(int newspd){
 	spdstat=newspd;
 }
 
-
-
-void player::basicattack(){
-
-}
-
-void player::attack1(){
-
-}
-
-void player::attack2(){
-
-}
-
-void player::attack3(){
-
-}
-
-void player::attack4(){
-
-}
-
-
-
 player::~player(){
 
 }

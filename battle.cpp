@@ -6,13 +6,12 @@ battle::battle(){
 }
 
 battle::battle(player user, enemy enemy1){
-
-	currentturn=0;
-	currentlyattacking=0;
-	participants=2;
 	battlearray=new gameobject[2];
 	battlearray[0]=user;
 	battlearray[1]=enemy1;
+	currentturn=0;
+	currentlyattacking=0;
+	participants=2;
 }
 
 void battle::battleturn(){
@@ -27,9 +26,8 @@ void battle::chooseatk(){
 	while(ischoosing==true){
 		std::cin >> atknumber;
 
-		if(atknumber>4||atknumber<0){
+		if(atknumber>4){
 			std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
-			break;
 		}
 
 		if(atknumber==0){ //could use an attack array here to speed things up
@@ -38,7 +36,6 @@ void battle::chooseatk(){
 			battlearray[0].basicattack();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			ischoosing=true;
-			break;
 		}
 
 		if(atknumber==1){
@@ -47,7 +44,6 @@ void battle::chooseatk(){
 			battlearray[0].attack1();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			ischoosing=true;
-			break;
 		}
 
 		if(atknumber==2){
@@ -56,7 +52,6 @@ void battle::chooseatk(){
 			battlearray[0].attack2();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			ischoosing=true;
-			break;
 		}
 
 		if(atknumber==3){
@@ -65,7 +60,6 @@ void battle::chooseatk(){
 			battlearray[0].attack3();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			ischoosing=true;
-			break;
 		}
 
 		if(atknumber==4){
@@ -74,8 +68,7 @@ void battle::chooseatk(){
 			battlearray[0].attack4();
 			std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			ischoosing=true;
-			break;
 		}
 	}
-	battleturn();
+	//battleturn();
 }
