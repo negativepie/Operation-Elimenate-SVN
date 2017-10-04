@@ -10,7 +10,7 @@ int main(){
 	game newgame = game();
 	newgame.gameIntro();
 
-	//e x t e n s i v ve t e s t i n g
+	//e x t e n s i v e t e s t i n g
 	player reimu = player("Reimu Hakurei",69,420,8008135,15);
 	enemy basicenemy = enemy();
 	basicenemy.changename("Monster A");
