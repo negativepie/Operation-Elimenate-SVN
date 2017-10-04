@@ -72,3 +72,11 @@ void battle::chooseatk(){
 	}
 	//battleturn();
 }
+
+/*
+Test cases for attacking and taking damage
+
+Run game and go through attacks 0-4. Enemy is taking damage accordingly. 
+Type in any other number and it should give you the error string. 
+
+*/
