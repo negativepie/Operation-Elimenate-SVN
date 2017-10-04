@@ -26,7 +26,7 @@ void battle::chooseatk(){
 	while(ischoosing=true){
 		std::cin >> atknumber;
 
-		if(atknumber>4){
+		if(atknumber>4||atknumber<0){
 			std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
 		}
 
