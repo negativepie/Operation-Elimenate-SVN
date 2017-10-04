@@ -16,7 +16,7 @@ public:
 	int currentlyattacking;
 	int participants;
 	bool ischoosing;
-	gameobject battlearray[2];
+	gameobject* battlearray;
 
 	//
 	//functions

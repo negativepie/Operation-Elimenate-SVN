@@ -2,7 +2,7 @@
 #include <string>
 
 enemy::enemy(){
-	hp=10;
+	hp=50;
 	mp=1;
 	atk=1;
 	sp_atk=1;
