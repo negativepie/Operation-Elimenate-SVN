@@ -18,11 +18,11 @@ public:
 	int spdstat=1;
 
 	//battle variables
-	int hp=1;
+	int hp=50;
 	int atk=1;
 	int def=1;
 	int spd=1;
-	bool isdead=0;
+	bool isdead=false;
 
 	//
 	//functions
@@ -34,6 +34,9 @@ public:
 	void attack2();
 	void attack3();
 	void attack4();
+
+	//
+	std::string getname();
 
 	//constructors
 

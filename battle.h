@@ -12,6 +12,7 @@ public:
 	//
 
 	int atknumber;
+	int random;
 	int currentturn;
 	int currentlyattacking;
 	int participants;
@@ -26,6 +27,11 @@ public:
 	battle(player user, enemy enemy1);
 	void chooseatk();
 	void battleturn();
+	void checkalive(gameobject obj);
+	void removeobject(int i);
+	void enemyatk();
+	void p();
+	~battle();
 
 };
 

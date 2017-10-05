@@ -1,5 +1,6 @@
 #include "gameobject.h"
 #include <iostream>
+#include <string>
 
 bool gameobject::dead(){
 	return hp<=0;
@@ -11,6 +12,10 @@ void gameobject::takedmg(int dmg){
 
 int gameobject::check_hp(){
 	return hp;
+}
+
+std::string gameobject::getname(){
+	return name;
 }
 
 void gameobject::basicattack(){
@@ -32,3 +37,4 @@ void gameobject::attack3(){
 void gameobject::attack4(){
  std::cout<<"Attack 4!"<<std::endl;
 }
+

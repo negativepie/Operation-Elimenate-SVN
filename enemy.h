@@ -21,12 +21,12 @@ public:
 	bool alive;
 
 	void changename(std::string newname);
-	std::string getname();
-	void basicattack();
-	void attack1();
-	void attack2();
-	void attack3();
-	void attack4();
+	virtual std::string getname();
+	virtual void basicattack();
+	virtual void attack1();
+	virtual void attack2();
+	virtual void attack3();
+	virtual void attack4();
 
 	void take_dmg(int n);
 	int check_hp();

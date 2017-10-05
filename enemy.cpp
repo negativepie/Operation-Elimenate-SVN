@@ -30,6 +30,26 @@ std::string enemy::getname(){
 	return name;
 }
 
+void enemy::basicattack(){
+ std::cout<<"Basic Attack!"<<std::endl;
+}
+
+void enemy::attack1(){
+ std::cout<<"Attack 1!"<<std::endl;
+}
+
+void enemy::attack2(){
+ std::cout<<"Attack 2!"<<std::endl;
+}
+
+void enemy::attack3(){
+ std::cout<<"Attack 3!"<<std::endl;
+}
+
+void enemy::attack4(){
+ std::cout<<"Attack 4!"<<std::endl;
+}
+
 enemy::~enemy(){
 
 }
