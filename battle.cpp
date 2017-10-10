@@ -7,14 +7,16 @@ battle::battle(){
 	//be careful, think about what might happen if you construct and empty battle array with nothing in it. Remember to take precautions with this (later on though because too lazy).
 }
 
-battle::battle(player user, enemy enemy1){
+battle::battle(player user, enemy enemy1,enemy enemy2, enemy3){
 	battlearray=new gameobject[2];
 	battlearray[0]=user;
 	battlearray[1]=enemy1;
+	battlearray[2]=enemy2;
+	battlearray[3]=enemy3;
 	currentturn=0;
 	currentlyattacking=0;
-	participants=2;
-	p();
+	participants=5;
+	next_turn();
 	//std::cout << battlearray[0].getname() << " you are now in a battle with a " << battlearray[1].getname() << std::endl;
 }
 
@@ -128,7 +130,7 @@ void battle::enemyatk(){
 			chooseatk();
 }
 
-void battle::p(){
+void battle::next_turn(){
 	if(battlearray[1].dead()==false){
 		chooseatk();
 	}
