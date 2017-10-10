@@ -11,7 +11,7 @@ public:
 	//state variables
 	//
 
-	int atknumber;
+	std::string atknumber;
 	int random;
 	int currentturn;
 	int currentlyattacking;

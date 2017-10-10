@@ -41,11 +41,7 @@ void battle::chooseatk(){
 		while(ischoosing==true){
 			std::cin >> atknumber;
 
-			if(atknumber>4){
-				std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
-			}
-
-			if(atknumber==0){ //could use an attack array here to speed things up
+			if(atknumber=="0"){ //could use an attack array here to speed things up
 				ischoosing=false;
 				battlearray[1].takedmg(0);
 				battlearray[0].basicattack();
@@ -53,7 +49,7 @@ void battle::chooseatk(){
 				//ischoosing=true;
 			}
 
-			if(atknumber==1){
+			if(atknumber=="1"){
 				ischoosing=false;
 				battlearray[1].takedmg(1);
 				battlearray[0].attack1();
@@ -61,7 +57,7 @@ void battle::chooseatk(){
 				//ischoosing=true;
 			}
 
-			if(atknumber==2){
+			if(atknumber=="2"){
 				ischoosing=false;
 				battlearray[1].takedmg(2);
 				battlearray[0].attack2();
@@ -69,7 +65,7 @@ void battle::chooseatk(){
 				//ischoosing=true;
 			}
 
-			if(atknumber==3){
+			if(atknumber=="3"){
 				ischoosing=false;
 				battlearray[1].takedmg(3);
 				battlearray[0].attack3();
@@ -77,12 +73,16 @@ void battle::chooseatk(){
 				//ischoosing=true;
 			}
 
-			if(atknumber==4){
+			if(atknumber=="4"){
 				ischoosing=false;
 				battlearray[1].takedmg(4);
 				battlearray[0].attack4();
 				std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
+			}
+
+			else{
+				std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
 			}
 		}
 	battleturn();
