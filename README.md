@@ -1,22 +1,27 @@
 # Operation-Eliminate-SVN
-Things to do:
-
-- Start
-
------------------------------
-
-Project Plan:
-
 OOP Game
 
-Make a game with a turn based battle system (pokemon style, maybe FF7 style if we have time) We could use a frame counter if we do FF7 system. 
+Place '.' in '()' when a task is complete {like so (.)}
 
-Array keeping track of all the enemies (Polymorphism as we have different kinds of enemies)
+# Coding
 
-Enemy objects instantiated (with health,dmg), use inheritance for different kinds of enemies (SVN Marking system as Boss 1HKO player)
+() - Speed
+() - Weather
+() - Stats (Defese, Magic Defense)
+() - Attacks which yield different damage dependent on stats
+() - Enemy Inheritance
+() - Text
+() - SVN Final Boss
+() - Leveling system
+() - Different abilities?
+() - Menu
 
-Abstract Classes-Have enemies class with no default method, it is dealt with later whenever we want, monsters have different attacks and "sounds"
+# Testing
 
-Testing
-- test enemies + player are taking damage
-- things are dying properly
+() - Basic getting and setting functions
+() - Enemy death
+() - Switching to next enemy
+() - Player death
+() - Correct damage
+() - Turn changing
+() - Speed priority
