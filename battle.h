@@ -16,6 +16,7 @@ public:
 	int currentturn;
 	int currentlyattacking;
 	int participants;
+	int which_enemy;
 	bool ischoosing;
 	gameobject* battlearray;
 

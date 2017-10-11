@@ -13,6 +13,7 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy3){
 	battlearray[1]=enemy1;
 	battlearray[2]=enemy2;
 	battlearray[3]=enemy3;
+	which_enemy=1;
 	currentturn=0;
 	currentlyattacking=0;
 	participants=5;
@@ -45,7 +46,7 @@ void battle::chooseatk(){
 
 			if(atknumber=="0"){ //could use an attack array here to speed things up
 				ischoosing=false;
-				battlearray[1].takedmg(0);
+				battlearray[which_enemy].takedmg(0);
 				battlearray[0].basicattack();
 				std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
@@ -53,7 +54,7 @@ void battle::chooseatk(){
 
 			if(atknumber=="1"){
 				ischoosing=false;
-				battlearray[1].takedmg(1);
+				battlearray[which_enemy].takedmg(1);
 				battlearray[0].attack1();
 				std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
@@ -61,7 +62,7 @@ void battle::chooseatk(){
 
 			if(atknumber=="2"){
 				ischoosing=false;
-				battlearray[1].takedmg(2);
+				battlearray[which_enemy].takedmg(2);
 				battlearray[0].attack2();
 				std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
@@ -69,7 +70,7 @@ void battle::chooseatk(){
 
 			if(atknumber=="3"){
 				ischoosing=false;
-				battlearray[1].takedmg(3);
+				battlearray[which_enemy].takedmg(3);
 				battlearray[0].attack3();
 				std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
@@ -77,7 +78,7 @@ void battle::chooseatk(){
 
 			if(atknumber=="4"){
 				ischoosing=false;
-				battlearray[1].takedmg(4);
+				battlearray[which_enemy].takedmg(4);
 				battlearray[0].attack4();
 				std::cout<<"Enemy 1 has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
@@ -98,31 +99,31 @@ void battle::enemyatk(){
 			}
 
 			if(random==0){
-				battlearray[1].basicattack();
+				battlearray[which_enemy].basicattack();
 				battlearray[0].takedmg(0);
 				std::cout<<"Reimu has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==1){
-				battlearray[1].attack1();
+				battlearray[which_enemy].attack1();
 				battlearray[0].takedmg(1);
 				std::cout<<"Reimu has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==2){
-				battlearray[1].attack2();
+				battlearray[which_enemy].attack2();
 				battlearray[0].takedmg(2);
 				std::cout<<"Reimu has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==3){
-				battlearray[1].attack3();
+				battlearray[which_enemy].attack3();
 				battlearray[0].takedmg(3);
 				std::cout<<"Reimu has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==4){
-				battlearray[1].attack4();
+				battlearray[which_enemy].attack4();
 				battlearray[0].takedmg(4);
 				std::cout<<"Reimu has  "<<battlearray[1].check_hp()<<"  hp"<<std::endl;
 			}
@@ -131,8 +132,11 @@ void battle::enemyatk(){
 }
 
 void battle::next_turn(){
-	if(battlearray[1].dead()==false){
+	if(battlearray[which_enemy].dead()==false){
 		chooseatk();
+	}
+	else{
+		which_enemy++;
 	}
 }
 
