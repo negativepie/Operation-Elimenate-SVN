@@ -135,7 +135,7 @@ void battle::enemyatk(){
 				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 			ischoosing=true;
-			chooseatk();
+			
 			next_turn();
 }
 
@@ -144,7 +144,7 @@ void battle::next_turn(){
 		chooseatk();
 	} else{
 		which_enemy++;
-		if(which_enemy<4){
+		if(which_enemy<=participants){
 		chooseatk();
 		}
 	}
