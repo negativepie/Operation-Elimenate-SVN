@@ -3,7 +3,12 @@
 #include <string>
 
 bool gameobject::dead(){
-	return hp<=0;
+	if(hp<=0){
+		return true;
+	} else {
+		return false;
+	}
+	
 }
 
 void gameobject::takedmg(int dmg){
