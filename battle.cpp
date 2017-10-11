@@ -55,7 +55,7 @@ void battle::chooseatk(){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(0);
 				battlearray[0]->basicattack();
-				std::cout<< battlearray[1]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
@@ -63,7 +63,7 @@ void battle::chooseatk(){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(1);
 				battlearray[0]->attack1();
-				std::cout<< battlearray[1]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
@@ -71,7 +71,7 @@ void battle::chooseatk(){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(2);
 				battlearray[0]->attack2();
-				std::cout<< battlearray[1]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
@@ -79,7 +79,7 @@ void battle::chooseatk(){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(3);
 				battlearray[0]->attack3();
-				std::cout<< battlearray[1]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
@@ -87,7 +87,7 @@ void battle::chooseatk(){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(4);
 				battlearray[0]->attack4();
-				std::cout << battlearray[1]->getname() << "  has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
@@ -143,6 +143,7 @@ void battle::next_turn(){
 		chooseatk();
 	} else{
 		which_enemy++;
+		chooseatk();
 	}
 }
 
