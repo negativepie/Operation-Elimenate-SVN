@@ -53,5 +53,6 @@ enemy3.changename("MonsterC");
 battle firstbattle(player user, enemy enemy1, enemy enemy2, enemy enemy3);
 
 //this is too check that the enemies die properly and then change of enemy
-
+// how would we check the results? Run the code, kill the first enemy; does it die? if yes does the code proceed to the next
+// enemy in the list? does the battle end when all enemies in the array are dead? 
 }
