@@ -1,7 +1,6 @@
 # Operation-Eliminate-SVN
-OOP Game
 
-Place '.' in '()' when a task is complete {like so (.)}
+Place '.' in '()' when a task is complete like so (.)
 
 # Coding
 
