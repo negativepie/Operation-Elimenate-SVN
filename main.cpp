@@ -15,10 +15,12 @@ int main(){
 	enemy basicenemy = enemy();
 	basicenemy.changename("Monster A");
 
+	//player * reimuptr = &reimu;
+	//enemy * enemyptr = &basicenemy;
+
 	battle firstbattle = battle(reimu,basicenemy);
 	//std::cout << reimu.getname() << " you are now in a battle with a " << basicenemy.getname() << std::endl;
 	//firstbattle.chooseatk();
-	
 
 	/*
 	//name and stats testing testing

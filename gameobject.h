@@ -36,7 +36,7 @@ public:
 	void attack4();
 
 	//
-	std::string getname();
+	virtual std::string getname();
 
 	//constructors
 
