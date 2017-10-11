@@ -34,7 +34,7 @@ public:
 	player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd);
 
 	//getter functions
-	virtual std::string getname();
+	/*virtual*/ std::string getname();
 	int gethpstat();
 	int getatkstat();
 	int getdefstat();

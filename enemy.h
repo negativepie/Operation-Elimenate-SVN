@@ -21,7 +21,7 @@ public:
 	bool alive;
 
 	void changename(std::string newname);
-	virtual std::string getname();
+	/*virtual*/ std::string getname();
 	virtual void basicattack();
 	virtual void attack1();
 	virtual void attack2();
