@@ -16,6 +16,7 @@ public:
 	int currentturn;
 	int currentlyattacking;
 	int participants;
+	int which_enemy;
 	bool ischoosing;
 	gameobject* battlearray;
 
@@ -24,13 +25,13 @@ public:
 	//
 
 	battle();
-	battle(player user, enemy enemy1);
+	battle(player user,enemy enemy1,enemy enemy2,enemy enemy3);
 	void chooseatk();
 	void battleturn();
 	void checkalive(gameobject obj);
 	void removeobject(int i);
 	void enemyatk();
-	void p();
+	void next_turn();
 	~battle();
 
 };
