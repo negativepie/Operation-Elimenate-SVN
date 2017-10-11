@@ -108,34 +108,35 @@ void battle::enemyatk(){
 			if(random==0){
 				battlearray[which_enemy]->basicattack();
 				battlearray[0]->takedmg(0);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==1){
 				battlearray[which_enemy]->attack1();
 				battlearray[0]->takedmg(1);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==2){
 				battlearray[which_enemy]->attack2();
 				battlearray[0]->takedmg(2);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==3){
 				battlearray[which_enemy]->attack3();
 				battlearray[0]->takedmg(3);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==4){
 				battlearray[which_enemy]->attack4();
 				battlearray[0]->takedmg(4);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[1]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 			ischoosing=true;
 			chooseatk();
+			next_turn();
 }
 
 void battle::next_turn(){
@@ -143,7 +144,9 @@ void battle::next_turn(){
 		chooseatk();
 	} else{
 		which_enemy++;
+		if(which_enemy<4){
 		chooseatk();
+		}
 	}
 }
 
