@@ -24,8 +24,8 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3){
 	currentturn=0;
 	currentlyattacking=0;
 	participants=2;
+	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 	next_turn();
-	//std::cout << battlearray[0].getname() << " you are now in a battle with a " << battlearray[1].getname() << std::endl;
 }
 
 void battle::battleturn(){
