@@ -13,6 +13,9 @@ bool gameobject::dead(){
 
 void gameobject::takedmg(int dmg){
 	hp=hp-dmg;
+	if(hp<0){
+		hp=0;
+	}
 }
 
 int gameobject::check_hp(){

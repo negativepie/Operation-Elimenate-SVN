@@ -9,6 +9,7 @@ using namespace std;
 int main(){
 	game newgame = game();
 	newgame.gameIntro();
+	game* gameptr=&newgame;
 
 	//e x t e n s i v e t e s t i n g
 	player reimu = player("Reimu Hakurei",69,420,8008135,15);
@@ -24,7 +25,7 @@ int main(){
 	//player * reimuptr = &reimu;
 	//enemy * enemyptr = &basicenemy;
 
-	battle firstbattle = battle(reimu,enemy1,enemy2,enemy3);
+	battle firstbattle = battle(reimu,enemy1,enemy2,enemy3,gameptr);
 	//std::cout << reimu.getname() << " you are now in a battle with a " << basicenemy.getname() << std::endl;
 	//firstbattle.chooseatk();
 
