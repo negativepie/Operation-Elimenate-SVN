@@ -18,9 +18,9 @@ Place '.' in '()' when a task is complete like so (.)
 # Testing
 
 - Basic getting and setting functions ()
-- Enemy death ()
+- Enemy death (.)
 - Switching to next enemy ()
-- Player death ()
+- Player death (.)
 - Correct damage ()
 - Turn changing ()
 - Speed priority ()
