@@ -7,7 +7,7 @@
 class enemy :public gameobject{
 
 public:
-	enemy();
+	enemy();         //do we need to define a damage varibale, since the attacks will do different damage depending on the enemy?
 
 	int hp;
 	int mp;
@@ -17,6 +17,8 @@ public:
 	int def;
 	int spd;
 	std::string name;
+	
+	//int dmg;
 
 	bool alive;
 
