@@ -9,13 +9,13 @@ class enemy :public gameobject{
 public:
 	enemy();
 
-	int hp;
-	int mp;
+	/* int hp;
 	int atk;
+	int def;
+	int spd; */
 	int sp_atk;
 	int sp_def;
-	int def;
-	int spd;
+	int mp;
 	std::string name;
 
 	bool alive;
@@ -27,9 +27,6 @@ public:
 	virtual void attack2();
 	virtual void attack3();
 	virtual void attack4();
-
-	void take_dmg(int n);
-	int check_hp();
 
  	~enemy();
 

@@ -18,14 +18,6 @@ void enemy::changename(std::string newname){
 	name=newname;
 }
 
-void enemy::take_dmg(int n){
-	hp=hp-n;
-}
-
-int enemy::check_hp(){
-	return hp;
-}
-
 std::string enemy::getname(){
 	return name;
 }

@@ -4,14 +4,13 @@
 #include "battle.h"
 #include "game.h"
 
-//weather
+//int sandstorm=1;
 
 	int sandstorm=1;
 	int rain=2;
 	int hail=3;
 	int sun=4;
 	int random_weather=rand()%5;
-
 
 battle::battle(){
 	//be careful, think about what might happen if you construct and empty battle array with nothing in it. Remember to take precautions with this (later on though because too lazy).
@@ -25,20 +24,22 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	battlearray[2]=&enemy2;
 	battlearray[3]=&enemy3;
 
+	//int sandstorm=1;
+	//int rain=2;
+	//int hail=3;
+	//int sun=4;
 
-
+	//int random2=rand()%5;
+	//weather=1;
 	weather=random_weather;
-
 	gamestate=gameinput;
+	ischoosing = true;
 
 	which_enemy=1;
 	currentturn=0;
 	currentlyattacking=0;
 	participants=4;
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
-	std::cout<< "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
-	std::cout<<" "<<std::endl;
-	ischoosing=true;
 	
 	next_turn();
 }
@@ -46,43 +47,53 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 void battle::battleturn(){
 	currentturn++;
 	currentlyattacking=currentturn%(participants-1);
-	std::cout << "current turn is "<< currentturn << std::endl;
+	
+	//if(battlearray[1].dead()==false){
+	//	enemyatk();
+	//}
 }
+
+// okay two problems with current battle system: one, even if the player uses the strongest attack every time they die before monster C
+// two, the enemy and player are initilised with the same hp, rather than different hp
+// - the cause of two is the need to initilise the hp in gameobject - this is setting it to a universal value or 0.
 
 void battle::chooseatk(){
 	
 		std::cout << "which attack would you like to use?" << std::endl;
 
 		while(ischoosing==true){
-			std::cout << atknumber << std::endl;
 			std::cin >> atknumber;
 
 			if(atknumber=="0"){ //could use an attack array here to speed things up
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(0);
+				battlearray[which_enemy]->takedmg(0); 
 				battlearray[0]->basicattack();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<< battlearray[which_enemy]->check_hp() <<"  hp" <<std::endl;
+				//ischoosing=true;
 			}
 
 			else if(atknumber=="1"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(1);
 				battlearray[0]->attack1();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;				
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				//ischoosing=true;
 			}
 
 			else if(atknumber=="2"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(2);
 				battlearray[0]->attack2();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				//ischoosing=true;
 			}
 
 			else if(atknumber=="3"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(3);
 				battlearray[0]->attack3();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				//ischoosing=true;
 			}
 
 			else if(atknumber=="4"){
@@ -90,6 +101,7 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(4);
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				//ischoosing=true;
 			}
 
 			else{
@@ -137,11 +149,14 @@ void battle::enemyatk(){
 			}
 			ischoosing=true;
 			weather_effect();
+			std::cout << "The turn number is " << currentturn << std::endl;
 			next_turn();
+			
 }
+
 void battle::next_turn(){
 	if(battlearray[0]->dead()==true){
-		gamestate->gameOver();
+		gamestate->game_state(3);
 	}
 
 	else if(battlearray[which_enemy]->dead()==false){
@@ -156,7 +171,7 @@ void battle::next_turn(){
 	}
 }
 
-void battle::weather_effect(){
+void battle::weather_effect(){  //this is 'randomised' to porduce only one value ever, I keep getting hail
 	
 	if(weather==sandstorm){
 		std::cout<<" "<<std::endl;

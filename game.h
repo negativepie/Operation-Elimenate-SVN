@@ -1,7 +1,8 @@
+#include <iostream>
 #ifndef GAME_H
 #define GAME_H
 
-#include <iostream>
+
 
 class game{
 
@@ -12,11 +13,17 @@ public:
 	const int play = 2;
 	const int gameover = 3;
 	const int pause = 4;
+	
+	std::string your_name;
 
 	//gamestate functions
-	void gameIntro();
-	void gamePause();
-	void gameOver();
+	//void gameIntro();
+	//void gamePause();
+	//void gameOver();
+	
+	game(); 
+	void game_state(int selection);
+	std::string getname();
 
 	//battle functions
 };

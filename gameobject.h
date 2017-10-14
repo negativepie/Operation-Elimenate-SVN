@@ -9,19 +9,15 @@ public:
 	//
 	//state variables
 	//
-
+	
 	//constant state variables
 	std::string name;
-	int hpstat=1;
-	int atkstat=1;
-	int defstat=1;
-	int spdstat=1;
 
 	//battle variables
-	int hp=50;
-	int atk=1;
-	int def=1;
-	int spd=1;
+	int hp;
+	int atk;
+	int def;
+	int spd;
 	bool isdead=false;
 
 	//
@@ -43,7 +39,7 @@ public:
 	//death check function and destructor
 	bool dead();
 	void takedmg(int dmg);
-	int check_hp();
+	virtual int check_hp();
 
 };
 
