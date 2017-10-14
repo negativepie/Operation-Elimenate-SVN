@@ -34,6 +34,7 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	currentlyattacking=0;
 	participants=4;
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
+	ischoosing=true;
 	
 	next_turn();
 }
@@ -52,6 +53,7 @@ void battle::chooseatk(){
 		std::cout << "which attack would you like to use?" << std::endl;
 
 		while(ischoosing==true){
+			std::cout << "poopoo" << atknumber << std::endl;
 			std::cin >> atknumber;
 
 			if(atknumber=="0"){ //could use an attack array here to speed things up
