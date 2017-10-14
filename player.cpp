@@ -4,18 +4,18 @@
 
 player::player(){
 	name="missingname";
-	hpstat=1;
-	atkstat=1;
-	defstat=1;
-	spdstat=1;
+	hp=1;
+	atk=1;
+	def=1;
+	spd=1;
 }
 
 player::player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd){
 	name=initialname;
-	hpstat=initialhp;
-	atkstat=initialatk;
-	defstat=initialspd;
-	spdstat=initialspd;
+	hp=initialhp;
+	atk=initialatk;
+	def=initialspd;
+	spd=initialspd;
 }
 
 
@@ -25,19 +25,19 @@ std::string player::getname(){
 }
 
 int player::gethpstat(){
-	return hpstat;
+	return hp;
 }
 
 int player::getatkstat(){
-	return atkstat;
+	return atk;
 }
 
 int player::getdefstat(){
-	return defstat;
+	return def;
 }
 
 int player::getspdstat(){
-	return spdstat;
+	return spd;
 }
 
 

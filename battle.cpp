@@ -28,13 +28,13 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	weather=1;
 
 	gamestate=gameinput;
+	ischoosing = true;
 
 	which_enemy=1;
 	currentturn=0;
 	currentlyattacking=0;
 	participants=4;
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
-	ischoosing=true;
 	
 	next_turn();
 }
@@ -53,7 +53,6 @@ void battle::chooseatk(){
 		std::cout << "which attack would you like to use?" << std::endl;
 
 		while(ischoosing==true){
-			std::cout << "poopoo" << atknumber << std::endl;
 			std::cin >> atknumber;
 
 			if(atknumber=="0"){ //could use an attack array here to speed things up
@@ -145,7 +144,7 @@ void battle::enemyatk(){
 }
 void battle::next_turn(){
 	if(battlearray[0]->dead()==true){
-		gamestate->gameOver();
+		gamestate->game_state(3); // this isn't working
 	}
 
 	else if(battlearray[which_enemy]->dead()==false){
