@@ -4,7 +4,13 @@
 #include "battle.h"
 #include "game.h"
 
-//int sandstorm=1;
+//weather
+
+	int sandstorm=1;
+	int rain=2;
+	int hail=3;
+	int sun=4;
+	int random_weather=rand()%5;
 
 
 battle::battle(){
@@ -19,13 +25,9 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	battlearray[2]=&enemy2;
 	battlearray[3]=&enemy3;
 
-	//int sandstorm=1;
-	//int rain=2;
-	//int hail=3;
-	//int sun=4;
 
-	//int random2=rand()%5;
-	weather=1;
+
+	weather=random_weather;
 
 	gamestate=gameinput;
 
@@ -34,6 +36,8 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	currentlyattacking=0;
 	participants=4;
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
+	std::cout<< "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
+	std::cout<<" "<<std::endl;
 	ischoosing=true;
 	
 	next_turn();
@@ -42,10 +46,7 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 void battle::battleturn(){
 	currentturn++;
 	currentlyattacking=currentturn%(participants-1);
-	std::cout << currentturn << std::endl;
-	//if(battlearray[1].dead()==false){
-	//	enemyatk();
-	//}
+	std::cout << "current turn is "<< currentturn << std::endl;
 }
 
 void battle::chooseatk(){
@@ -53,7 +54,7 @@ void battle::chooseatk(){
 		std::cout << "which attack would you like to use?" << std::endl;
 
 		while(ischoosing==true){
-			std::cout << "poopoo" << atknumber << std::endl;
+			std::cout << atknumber << std::endl;
 			std::cin >> atknumber;
 
 			if(atknumber=="0"){ //could use an attack array here to speed things up
@@ -61,15 +62,13 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(0);
 				battlearray[0]->basicattack();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="1"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(1);
 				battlearray[0]->attack1();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
+				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;				
 			}
 
 			else if(atknumber=="2"){
@@ -77,7 +76,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(2);
 				battlearray[0]->attack2();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="3"){
@@ -85,7 +83,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(3);
 				battlearray[0]->attack3();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="4"){
@@ -93,7 +90,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(4);
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else{
@@ -162,15 +158,42 @@ void battle::next_turn(){
 
 void battle::weather_effect(){
 	
-	if(weather==1){
+	if(weather==sandstorm){
+		std::cout<<" "<<std::endl;
+		std::cout<< "A sandstorm rages" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was hit by sandstorm" <<std::endl;
 		battlearray[0]->takedmg(1);
+		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was hit by sandstorm" <<std::endl;
 		battlearray[which_enemy]->takedmg(1);
+		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<< std::endl;
+		std::cout<<" "<<std::endl;
 	}
-	if(weather==3){
-		battlearray[0]->takedmg(3);
-		battlearray[which_enemy]->takedmg(3);
+	else if(weather==hail){
+		std::cout<<" "<<std::endl;
+		std::cout<< "It is hailing" <<std::endl;
+		std::cout<< battlearray[0]->getname() << " was struck by hail" <<std::endl;
+		battlearray[0]->takedmg(1);
+		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
+		std::cout<< battlearray[which_enemy]->getname() << " was struck by hail" <<std::endl;
+		battlearray[which_enemy]->takedmg(1);
+		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<<std::endl;
+		std::cout<<" "<<std::endl;
+	}
+	else if(weather==sun){
+		std::cout<<" "<<std::endl;
+		std::cout<< "The sun shines brightly" <<std::endl;
+		std::cout<<" "<<std::endl;
+	}
+	else if(weather==rain){
+		std::cout<<" "<<std::endl;
+		std::cout<< "It is raining heavily" <<std::endl;
+		std::cout<<" "<<std::endl;
+	}
+	else{
+		std::cout<<" "<<std::endl;
+		std::cout<<"weather error"<<std::endl;
+		std::cout<<" "<<std::endl;
 	}
 }
 
