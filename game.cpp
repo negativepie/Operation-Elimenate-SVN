@@ -5,7 +5,7 @@ void game::gameIntro(){
 }
 
 void game::gameOver(){
-	std::cout << "YOU DIED" << std::endl;
+	std::cout << "YOU DIED" << std::endl<< std::endl<< std::endl << "GAME OVER" << std::endl;
 }
 
 void game::gamePause(){

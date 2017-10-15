@@ -3,6 +3,7 @@
 #include "enemy.h"
 #include "gameobject.h"
 #include "battle.h"
+#include <stdlib.h>
 
 using namespace std;
 

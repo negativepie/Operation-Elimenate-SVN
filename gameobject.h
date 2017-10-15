@@ -12,28 +12,33 @@ public:
 
 	//constant state variables
 	std::string name;
-	int hpstat=1;
-	int atkstat=1;
-	int defstat=1;
-	int spdstat=1;
+	int hpstat;
+	int atkstat;
+	int defstat;
+	int spdstat;
 
 	//battle variables
 	int hp=50;
 	int atk=1;
 	int def=1;
 	int spd=1;
+	int spdef;
+	int spatk;
 	bool isdead=false;
+	int atktype=0;
+	int type=0;
+	bool ismagic=false;
 
 	//
 	//functions
 	//
 	
 	//attack functions
-	void basicattack();
-	void attack1();
-	void attack2();
-	void attack3();
-	void attack4();
+	virtual void basicattack()=0;
+	virtual void attack1()=0;
+	virtual void attack2()=0;
+	virtual void attack3()=0;
+	virtual void attack4()=0;
 
 	//
 	virtual std::string getname();
@@ -42,7 +47,7 @@ public:
 
 	//death check function and destructor
 	bool dead();
-	void takedmg(int dmg);
+	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
 	int check_hp();
 
 };

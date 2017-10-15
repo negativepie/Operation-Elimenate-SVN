@@ -8,24 +8,6 @@ class player :public gameobject{
 public:
 
 	//
-	//state variables
-	//
-
-	//constant state variables
-	std::string name;
-	int hpstat;
-	int atkstat;
-	int defstat;
-	int spdstat;
-
-	//battle variables
-	int hp;
-	int atk;
-	int def;
-	int spd;
-	bool isdead=0;
-
-	//
 	//functions
 	//
 
