@@ -54,9 +54,11 @@ void battle::battleturn(){
 	//}
 }
 
-// okay two problems with current battle system: one, even if the player uses the strongest attack every time they die before monster C
-// two, the enemy and player are initilised with the same hp, rather than different hp
-// - the cause of two is the need to initilise the hp in gameobject - this is setting it to a universal value or 0.
+// okay problems with current battle system: 
+// one - even if the player uses the strongest attack every time they die before monster C
+// two - the monsters are all the same, but this will probably be fixed once enemy inheritance exists
+// three - when the 'attack' function is called it only calls the 'player' or 'enemy' attack function, not the subclasses
+// four - what are we going to do about possible negative damage? if the enemy's defense is higher than player attack...?
 
 void battle::chooseatk(){
 	
