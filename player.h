@@ -13,17 +13,13 @@ public:
 
 	//constant state variables
 	std::string name;
-	int hpstat;
-	int atkstat;
-	int defstat;
-	int spdstat;
 
 	//battle variables
-	int hp;
+	/* int hp;
 	int atk;
 	int def;
 	int spd;
-	bool isdead=0;
+	bool isdead=0; */
 
 	//
 	//functions
@@ -32,13 +28,9 @@ public:
 	//constructors
 	player();
 	player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd);
-
+	
 	//getter functions
 	/*virtual*/ std::string getname();
-	int gethpstat();
-	int getatkstat();
-	int getdefstat();
-	int getspdstat();
 
 	int getcurrenthp();
 	int getcurrentatk();
@@ -53,11 +45,11 @@ public:
 	void changespdstat(int newspd);
 
 	//attack functions
-	void basicattack();
-	void attack1();
-	void attack2();
-	void attack3();
-	void attack4();
+	/* virtual void basicattack();
+	virtual void attack1();
+	virtual void attack2();
+	virtual void attack3();
+	virtual void attack4(); */
 
 	//destructor
 	~player();

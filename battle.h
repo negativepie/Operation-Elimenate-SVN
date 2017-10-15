@@ -20,6 +20,8 @@ public:
 	int which_enemy;
 	int weather;
 	bool ischoosing;
+	int damage=0;
+
 	gameobject** battlearray;
 	game* gamestate;
 

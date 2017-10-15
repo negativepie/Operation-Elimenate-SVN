@@ -11,6 +11,22 @@ bool gameobject::dead(){
 	
 }
 
+int gameobject::getcurrenthp(){
+	return hp;
+}
+
+int gameobject::getcurrentatk(){
+	return atk;
+}
+
+int gameobject::getcurrentdef(){
+	return def;
+}
+
+int gameobject::getcurrentspd(){
+	return spd;
+}
+
 void gameobject::takedmg(int dmg){
 	hp=hp-dmg;
 	if(hp<0){
