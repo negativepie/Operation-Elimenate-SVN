@@ -9,36 +9,38 @@ public:
 	//
 	//state variables
 	//
-
+	
 	//constant state variables
 	std::string name;
-	int hpstat;
-	int atkstat;
-	int defstat;
-	int spdstat;
 
 	//battle variables
-	int hp=50;
-	int atk=1;
-	int def=1;
-	int spd=1;
-	int spdef;
-	int spatk;
+	int hp;
+	int atk;
+	int def;
+	int spd;
 	bool isdead=false;
-	int atktype=0;
-	int type=0;
-	bool ismagic=false;
 
+	int getcurrenthp();
+	int getcurrentatk();
+	int getcurrentdef();
+	int getcurrentspd();
+	
 	//
 	//functions
 	//
 	
+	virtual void changename(std::string newname);
+	virtual void changehpstat(int newhp);
+	virtual void changeatkstat(int newatk);
+	virtual void changedefstat(int newdef);
+	virtual void changespdstat(int newspd);
+	
 	//attack functions
-	virtual void basicattack()=0;
-	virtual void attack1()=0;
-	virtual void attack2()=0;
-	virtual void attack3()=0;
-	virtual void attack4()=0;
+	virtual void basicattack();
+	virtual void attack1();
+	virtual void attack2();
+	virtual void attack3();
+	virtual void attack4();
 
 	//
 	virtual std::string getname();
@@ -47,8 +49,8 @@ public:
 
 	//death check function and destructor
 	bool dead();
-	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
-	int check_hp();
+	void takedmg(int dmg);
+	virtual int check_hp();
 
 };
 

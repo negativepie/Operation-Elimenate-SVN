@@ -3,18 +3,17 @@
 #include <stdlib.h>
 #include "battle.h"
 #include "game.h"
-#include <ctime>
 
-	int hurricane=0;
+//int sandstorm=1;
+
 	int sandstorm=1;
 	int rain=2;
 	int hail=3;
 	int sun=4;
-	
-
+	int random_weather=rand()%5;
 
 battle::battle(){
-
+	//be careful, think about what might happen if you construct and empty battle array with nothing in it. Remember to take precautions with this (later on though because too lazy).
 }
 
 battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gameinput){
@@ -24,32 +23,36 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	battlearray[1]=&enemy1;
 	battlearray[2]=&enemy2;
 	battlearray[3]=&enemy3;
-	
-	srand(time(NULL));
-	int random_weather=std::rand()%5;
-	weather=random_weather;
-	
-	gamestate=gameinput;
 
+	//int sandstorm=1;
+	//int rain=2;
+	//int hail=3;
+	//int sun=4;
+
+	//int random2=rand()%5;
+	//weather=1;
+	weather=random_weather;
+	gamestate=gameinput;
+	ischoosing = true;
+	
 	which_enemy=1;
 	currentturn=0;
 	currentlyattacking=0;
 	participants=4;
-	ischoosing=true;
-
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
-	std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
-	std::cout <<" "<<std::endl;
-	
-	
+	std::cout<< "Basic Attack:0, Special Attacks: 1-4"<<std::endl;		
+	//std::cout<<" "<<std::endl;
 	next_turn();
 }
 
 void battle::battleturn(){
 	currentturn++;
 	currentlyattacking=currentturn%(participants-1);
-	std::cout << "current turn is "<< currentturn << std::endl;
 }
+
+// okay two problems with current battle system: one, even if the player uses the strongest attack every time they die before monster C
+// two, the enemy and player are initilised with the same hp, rather than different hp
+// - the cause of two is the need to initilise the hp in gameobject - this is setting it to a universal value or 0.
 
 void battle::chooseatk(){
 	
@@ -58,41 +61,42 @@ void battle::chooseatk(){
 		while(ischoosing==true){
 			std::cin >> atknumber;
 
-			if(atknumber=="0"){
+			if(atknumber=="0"){ //could use an attack array here to speed things up
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(0,0,false);
+				damage = battlearray[0]->getcurrentatk() - battlearray[which_enemy]->getcurrentdef();
+				battlearray[which_enemy]->takedmg(damage); 
 				battlearray[0]->basicattack();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<< battlearray[which_enemy]->check_hp() <<"  hp" <<std::endl;
 				//ischoosing=true;
 			}
 
 			else if(atknumber=="1"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(1,0,false);
+				battlearray[which_enemy]->takedmg(1);
 				battlearray[0]->attack1();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
 			else if(atknumber=="2"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(2,0,false);
+				battlearray[which_enemy]->takedmg(2);
 				battlearray[0]->attack2();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
 			else if(atknumber=="3"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(3,0,false);
+				battlearray[which_enemy]->takedmg(3);
 				battlearray[0]->attack3();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}
 
 			else if(atknumber=="4"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(4,0,false);
+				battlearray[which_enemy]->takedmg(4);
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
@@ -102,7 +106,7 @@ void battle::chooseatk(){
 				std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
 			}
 		}
-	//battleturn();
+	battleturn();
 	enemyatk();
 }
 
@@ -114,40 +118,43 @@ void battle::enemyatk(){
 
 			if(random==0){
 				battlearray[which_enemy]->basicattack();
-				battlearray[0]->takedmg(0,0,false);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
+				battlearray[0]->takedmg(0);
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==1){
 				battlearray[which_enemy]->attack1();
-				battlearray[0]->takedmg(1,0,false);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
+				battlearray[0]->takedmg(1);
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==2){
 				battlearray[which_enemy]->attack2();
-				battlearray[0]->takedmg(2,0,false);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
+				battlearray[0]->takedmg(2);
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==3){
 				battlearray[which_enemy]->attack3();
-				battlearray[0]->takedmg(3,0,false);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
+				battlearray[0]->takedmg(3);
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			if(random==4){
 				battlearray[which_enemy]->attack4();
-				battlearray[0]->takedmg(4,0,false);
-				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
+				battlearray[0]->takedmg(4);
+				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl;
 			}
 			ischoosing=true;
 			weather_effect();
+			std::cout << "The turn number is " << currentturn << std::endl;
 			next_turn();
+			
 }
+
 void battle::next_turn(){
 	if(battlearray[0]->dead()==true){
-		gamestate->gameOver();
+		gamestate->game_state(3);
 	}
 
 	else if(battlearray[which_enemy]->dead()==false){
@@ -155,24 +162,24 @@ void battle::next_turn(){
 	} 
 
 	else{
-		std::cout << battlearray[which_enemy]->getname() << " has died" << std::endl<<std::endl;
 		which_enemy++;
+		battlearray[0]->changehpstat(50); // this can be used to reset the player hp between enemies. But how to get the actual hp? 
 		if(which_enemy<participants){
 		chooseatk();
 		}
 	}
 }
 
-void battle::weather_effect(){
+void battle::weather_effect(){  //this is 'randomised' to porduce only one value ever, I keep getting hail
 	
 	if(weather==sandstorm){
 		std::cout<<" "<<std::endl;
 		std::cout<< "A sandstorm rages" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was hit by sandstorm" <<std::endl;
-		battlearray[0]->takedmg(1,0,false);
+		battlearray[0]->takedmg(1);
 		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was hit by sandstorm" <<std::endl;
-		battlearray[which_enemy]->takedmg(1,0,false);
+		battlearray[which_enemy]->takedmg(1);
 		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<< std::endl;
 		std::cout<<" "<<std::endl;
 	}
@@ -180,10 +187,10 @@ void battle::weather_effect(){
 		std::cout<<" "<<std::endl;
 		std::cout<< "It is hailing" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was struck by hail" <<std::endl;
-		battlearray[0]->takedmg(1,0,false);
+		battlearray[0]->takedmg(1);
 		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was struck by hail" <<std::endl;
-		battlearray[which_enemy]->takedmg(1,0,false);
+		battlearray[which_enemy]->takedmg(1);
 		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<<std::endl;
 		std::cout<<" "<<std::endl;
 	}
@@ -195,11 +202,6 @@ void battle::weather_effect(){
 	else if(weather==rain){
 		std::cout<<" "<<std::endl;
 		std::cout<< "It is raining heavily" <<std::endl;
-		std::cout<<" "<<std::endl;
-	}
-	else if(weather==hurricane){
-		std::cout<<" "<<std::endl;
-		std::cout<<"A fierce wind blows"<<std::endl;
 		std::cout<<" "<<std::endl;
 	}
 	else{
