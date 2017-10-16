@@ -4,20 +4,21 @@ Place '.' in '()' when a task is complete like so (.)
 
 # Code is mostly functional, yay!?
 
+# NOTE
+
+- need to make sure specification of the program is present and done at the practical session
+
 # Coding
 
-- Speed () 
 - Name input ()
 - Make text nice and neat ()
 - Weather (.) (Functional, needs text added for all cases)
 - Stats (Defese, Magic Defense) (.)
 - Attacks which yield different damage dependent on stats (.)
-- Enemy Inheritance ()
-- Text ()
+- Enemy Inheritance (.) (mostly there, nothing necessarily to add yet)
 - SVN Final Boss () (Basics there)
-- Leveling system ()
 - Different abilities? (.) (Reimu) (just need to make them more diverse)
-- Menu ()
+- Menu () (actually implement)
 
 - Change conditional statements into switch statements if possible ()
 
@@ -35,12 +36,9 @@ Place '.' in '()' when a task is complete like so (.)
 
 - Regression testing ()
 
-# Other
+# Optional goals
 
-- Also need to make sure specification of the program is present and done at the practical session
-
-# Longer term ideal goals (not necessary to complete all)
-
+- Speed () 
 - Leveling system ()
 - Speed ()
 - The game not just being a battle () (menu etc., basic outside game things)
