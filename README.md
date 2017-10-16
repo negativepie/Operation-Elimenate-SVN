@@ -6,7 +6,7 @@ Place '.' in '()' when a task is complete like so (.)
 
 # NOTE
 
-- need to make sure specification of the program is present and done at the practical session
+- Need to make sure specification of the program is present and done at the practical session
 
 # Coding
 
