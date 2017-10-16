@@ -56,3 +56,58 @@ void gameobject::attack4(){
 
 }
 
+int gameobject::gethpstat(){
+	return hpstat;
+}
+
+int gameobject::getatkstat(){
+	return atkstat;
+}
+
+int gameobject::getdefstat(){
+	return defstat;
+}
+
+int gameobject::getspdstat(){
+	return spdstat;
+}
+
+
+
+int gameobject::getcurrenthp(){
+	return hp;
+}
+
+int gameobject::getcurrentatk(){
+	return atk;
+}
+
+int gameobject::getcurrentdef(){
+	return def;
+}
+
+int gameobject::getcurrentspd(){
+	return spd;
+}
+
+
+
+void gameobject::changename(std::string newname){
+	name=newname;
+}
+
+void gameobject::changehpstat(int newhp){
+	hpstat=newhp;
+}
+
+void gameobject::changeatkstat(int newatk){
+	atkstat=newatk;
+}
+
+void gameobject::changedefstat(int newdef){
+	defstat=newdef;
+}
+
+void gameobject::changespdstat(int newspd){
+	spdstat=newspd;
+}

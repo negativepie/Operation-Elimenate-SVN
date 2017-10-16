@@ -41,7 +41,7 @@ public:
 	virtual void attack4()=0;
 
 	//
-	virtual std::string getname();
+	std::string getname();
 
 	//constructors
 
@@ -49,6 +49,22 @@ public:
 	bool dead();
 	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
 	int check_hp();
+
+	int gethpstat();
+	int getatkstat();
+	int getdefstat();
+	int getspdstat();
+
+	int getcurrenthp();
+	int getcurrentatk();
+	int getcurrentdef();
+	int getcurrentspd();
+
+	void changename(std::string newname);
+	void changehpstat(int newhp);
+	void changeatkstat(int newatk);
+	void changedefstat(int newdef);
+	void changespdstat(int newspd);
 
 };
 

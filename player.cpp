@@ -29,66 +29,8 @@ player::player(std::string initialname, int initialhp, int initialatk, int initi
 	spd=spdstat;
 }
 
+void level(){
 
-
-std::string player::getname(){
-	return name;
-}
-
-int player::gethpstat(){
-	return hpstat;
-}
-
-int player::getatkstat(){
-	return atkstat;
-}
-
-int player::getdefstat(){
-	return defstat;
-}
-
-int player::getspdstat(){
-	return spdstat;
-}
-
-
-
-int player::getcurrenthp(){
-	return hp;
-}
-
-int player::getcurrentatk(){
-	return atk;
-}
-
-int player::getcurrentdef(){
-	return def;
-}
-
-int player::getcurrentspd(){
-	return spd;
-}
-
-
-
-void player::changename(std::string newname){
-	name=newname;
-}
-
-void player::changehpstat(int newhp){
-	hpstat=newhp;
-}
-
-void player::changeatkstat(int newatk){
-	atkstat=newatk;
-}
-
-void player::changedefstat(int newdef){
-	defstat=newdef;
-}
-
-void player::changespdstat(int newspd){
-	spdstat=newspd;
 }
 
 void player::basicattack(){
