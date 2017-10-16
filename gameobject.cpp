@@ -3,6 +3,29 @@
 #include <string>
 #include <math.h>
 
+gameobject::gameobject(){
+	//default values
+	name="missingname";
+
+	hpstat=50;
+	atkstat=1;
+	defstat=1;
+	spdstat=1;
+	spdefstat=1;
+	spatkstat=1;
+
+	hp=hpstat;
+	atk=atkstat;
+	def=defstat;
+	spd=spdstat;
+	spdef=spdefstat;
+	spatk=spatkstat;
+
+	type=0;
+
+	isdead=false;
+}
+
 bool gameobject::dead(){
 	if(hp<=0){
 		return true;
@@ -14,11 +37,11 @@ bool gameobject::dead(){
 
 void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
 	if(isincomingmagic==true){
-		dmg=dmg+ceil(dmg/def);
+		dmg=dmg+ceil(dmg/spdef);
 	}
 
 	else{
-		dmg=dmg+ceil(dmg/spdef);
+		dmg=dmg+ceil(dmg/def);
 	}
 
 	hp=hp-dmg;
@@ -28,13 +51,7 @@ void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
 	}
 }
 
-int gameobject::check_hp(){
-	return hp;
-}
 
-std::string gameobject::getname(){
-	return name;
-}
 
 void gameobject::basicattack(){
 
@@ -54,6 +71,16 @@ void gameobject::attack3(){
 
 void gameobject::attack4(){
 
+}
+
+
+
+int gameobject::check_hp(){
+	return hp;
+}
+
+std::string gameobject::getname(){
+	return name;
 }
 
 int gameobject::gethpstat(){
@@ -110,4 +137,8 @@ void gameobject::changedefstat(int newdef){
 
 void gameobject::changespdstat(int newspd){
 	spdstat=newspd;
+}
+
+gameobject::~gameobject(){
+
 }

@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "battle.h"
 #include "game.h"
-#include <ctime>
 
 	int hurricane=0;
 	int sandstorm=1;
@@ -25,7 +24,7 @@ battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gamei
 	battlearray[2]=&enemy2;
 	battlearray[3]=&enemy3;
 	
-	srand(time(NULL));
+	
 	int random_weather=std::rand()%5;
 	weather=random_weather;
 	
@@ -62,6 +61,7 @@ void battle::chooseatk(){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(0,0,false);
 				battlearray[0]->basicattack();
+				//battlearray[0]->f();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 				//ischoosing=true;
 			}

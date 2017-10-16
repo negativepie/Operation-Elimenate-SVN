@@ -4,10 +4,12 @@
 #include "gameobject.h"
 #include "battle.h"
 #include <stdlib.h>
+#include <ctime>
 
 using namespace std;
 
 int main(){
+	srand(time(NULL));
 	game newgame = game();
 	newgame.gameIntro();
 	game* gameptr=&newgame;
