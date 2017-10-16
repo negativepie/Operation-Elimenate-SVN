@@ -17,13 +17,6 @@ public:
 	virtual void attack3();
 	virtual void attack4();
 	int check_hp();
-	void getsound();
-	void changesound(std::string newsound);
-	void change_death_cry(std::string newsound);
-	void deathsound();
-
-	std::string sound;
-	std::string death_cry;
 
  	~enemy();
 

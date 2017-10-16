@@ -4,10 +4,12 @@
 #include "gameobject.h"
 #include "battle.h"
 #include <stdlib.h>
+#include <ctime>
 
 using namespace std;
 
 int main(){
+	srand(time(NULL));
 	game newgame = game();
 	newgame.gameIntro();
 	game* gameptr=&newgame;
@@ -22,14 +24,6 @@ int main(){
 	enemy1.changename("Monster A");
 	enemy2.changename("Monster B");
 	enemy3.changename("Monster C");
-
-	enemy1.changesound("ROAR A");
-	enemy2.changesound("ROAR B");
-	enemy3.changesound("ROAR C");
-
-	enemy1.change_death_cry("A goes pop");
-	enemy2.change_death_cry("B goes pop");
-	enemy3.change_death_cry("C goes pop");
 
 	//player * reimuptr = &reimu;
 	//enemy * enemyptr = &basicenemy;

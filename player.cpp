@@ -3,16 +3,7 @@
 #include <iostream>
 
 player::player(){
-	name="missingname";
-	hpstat=1;
-	atkstat=1;
-	defstat=1;
-	spdstat=1;
 
-	hp=hpstat;
-	atk=atkstat;
-	def=defstat;
-	spd=spdstat;
 }
 
 player::player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd){
@@ -34,24 +25,38 @@ void level(){
 }
 
 void player::basicattack(){
- std::cout<<"Basic Player Attack!"<<std::endl<<std::endl;
+	atktype=0;
+	ismagic=false;
+	std::cout<<name <<"Attacks with a basic attack!"<<std::endl<<std::endl;
 }
 
 void player::attack1(){
- std::cout<<"Player Attack 1!"<<std::endl<<std::endl;
+	atktype=std::rand()%5;
+	ismagic=false;
+	std::cout<<name <<"Used Supersonic Elemental Drill!"<<std::endl<<std::endl;
 }
 
 void player::attack2(){
- std::cout<<"Player Attack 2!"<<std::endl<<std::endl;
+	atktype=0;
+	ismagic=false;
+	std::cout<<name <<""<<std::endl<<std::endl;
 }
 
 void player::attack3(){
- std::cout<<"Player Attack 3!"<<std::endl<<std::endl;
+	atktype=0;
+	ismagic=true;
+	std::cout<<"Player Attack 3!"<<std::endl<<std::endl;
 }
 
 void player::attack4(){
- std::cout<<"Player Attack 4!"<<std::endl<<std::endl;
+	atktype=0;
+	ismagic=true;
+	std::cout<<"Used Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl<<std::endl;
 }
+
+/*void f(){
+	std::cout << "this is a test" << std::endl;
+}*/
 
 player::~player(){
 

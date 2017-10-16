@@ -21,9 +21,7 @@ public:
 	void attack2();
 	void attack3();
 	void attack4();
-
-	//leveling function
-	void level();
+	//void f();
 
 	//destructor
 	~player();

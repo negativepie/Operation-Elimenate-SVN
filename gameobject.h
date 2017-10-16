@@ -16,18 +16,23 @@ public:
 	int atkstat;
 	int defstat;
 	int spdstat;
+	int spdefstat;
+	int spatkstat;
+	
 
 	//battle variables
-	int hp=50;
-	int atk=1;
-	int def=1;
-	int spd=1;
+	int hp;
+	int atk;
+	int def;
+	int spd;
 	int spdef;
 	int spatk;
-	bool isdead=false;
-	int atktype=0;
+	
 	int type=0;
-	bool ismagic=false;
+	int atktype;
+	bool ismagic;
+
+	bool isdead;
 
 	//
 	//functions
@@ -40,16 +45,16 @@ public:
 	virtual void attack3()=0;
 	virtual void attack4()=0;
 
-	//
-	std::string getname();
-
+	
 	//constructors
+	gameobject();
 
-	//death check function and destructor
+	//death checking and damage
 	bool dead();
 	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
 	int check_hp();
 
+	std::string getname();
 	int gethpstat();
 	int getatkstat();
 	int getdefstat();
@@ -65,6 +70,9 @@ public:
 	void changeatkstat(int newatk);
 	void changedefstat(int newdef);
 	void changespdstat(int newspd);
+
+	//destructor
+	~gameobject();
 
 };
 
