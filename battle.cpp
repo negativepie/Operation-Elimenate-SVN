@@ -63,7 +63,6 @@ void battle::chooseatk(){
 				battlearray[0]->basicattack();
 				//battlearray[0]->f();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="1"){
@@ -71,7 +70,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(1,0,false);
 				battlearray[0]->attack1();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="2"){
@@ -79,7 +77,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(2,0,false);
 				battlearray[0]->attack2();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="3"){
@@ -87,7 +84,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(3,0,false);
 				battlearray[0]->attack3();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="4"){
@@ -95,7 +91,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(4,0,false);
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else{
@@ -155,8 +150,13 @@ void battle::next_turn(){
 	} 
 
 	else{
-		std::cout << battlearray[which_enemy]->getname() << " has died" << std::endl<<std::endl;
+		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
+		if(which_enemy==1){
+		std::cout<<"Congratulations "<< battlearray[0]->getname() << " you have leveled up"<<std::endl;
+		//change stats here
+		}
 		which_enemy++;
+		std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 		if(which_enemy<participants){
 		chooseatk();
 		}
@@ -170,7 +170,7 @@ void battle::weather_effect(){
 		std::cout<< "A sandstorm rages" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was hit by sandstorm" <<std::endl;
 		battlearray[0]->takedmg(1,0,false);
-		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
+		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<" hp left"<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was hit by sandstorm" <<std::endl;
 		battlearray[which_enemy]->takedmg(1,0,false);
 		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<< std::endl;
@@ -181,7 +181,7 @@ void battle::weather_effect(){
 		std::cout<< "It is hailing" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was struck by hail" <<std::endl;
 		battlearray[0]->takedmg(1,0,false);
-		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
+		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<" hp left"<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was struck by hail" <<std::endl;
 		battlearray[which_enemy]->takedmg(1,0,false);
 		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<<std::endl;
