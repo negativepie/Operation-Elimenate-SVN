@@ -7,7 +7,7 @@ gameobject::gameobject(){
 	//default values
 	name="missingname";
 
-	hpstat=50;
+	hpstat=500;
 	atkstat=1;
 	defstat=1;
 	spdstat=1;
@@ -22,8 +22,6 @@ gameobject::gameobject(){
 	spatk=spatkstat;
 
 	type=0;
-
-	isdead=false;
 }
 
 bool gameobject::dead(){
@@ -49,9 +47,23 @@ void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
 	if(hp<0){
 		hp=0;
 	}
+
+	if(hp>hpstat){
+		hp=hpstat;
+	}
 }
 
+int gameobject::dmgoutput(){
+	return dmgout;
+}
 
+int gameobject::atktypeoutput(){
+	return atktype;
+}
+
+bool gameobject::magicoutput(){
+	return ismagic;
+}
 
 void gameobject::basicattack(){
 
@@ -73,6 +85,35 @@ void gameobject::attack4(){
 
 }
 
+
+void gameobject::checkhpover(){
+	if(hp>hpstat){
+		hp=hpstat;
+	}
+}
+
+void gameobject::postbattlestatcheck(){
+
+	if(atk>atkstat){
+		atk=atkstat;
+	}
+
+	if(def>defstat){
+		def=defstat;
+	}
+
+	if(spdef>spdefstat){
+		spdef=spdefstat;
+	}
+
+	if(spatk>spatkstat){
+		spatk=spatkstat;
+	}
+
+	if(spd>spdstat){
+		spd=spdstat;
+	}
+}
 
 
 int gameobject::check_hp(){

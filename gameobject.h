@@ -31,8 +31,7 @@ public:
 	int type=0;
 	int atktype;
 	bool ismagic;
-
-	bool isdead;
+	int dmgout;
 
 	//
 	//functions
@@ -53,6 +52,14 @@ public:
 	bool dead();
 	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
 	int check_hp();
+
+	void postbattlestatcheck();
+	void checkhpover();
+
+	int dmgoutput();
+	int atktypeoutput();
+	bool magicoutput();
+
 
 	std::string getname();
 	int gethpstat();

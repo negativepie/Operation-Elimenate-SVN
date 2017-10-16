@@ -8,15 +8,13 @@ class enemy :public gameobject{
 
 public:
 	enemy();
+	enemy(std::string initialname, int initialhp, int initialatk, int initialspatk, int initialspdef, int initialdef, int initialspd);
 
-	void changename(std::string newname);
-	/*virtual*/ std::string getname();
 	virtual void basicattack();
 	virtual void attack1();
 	virtual void attack2();
 	virtual void attack3();
 	virtual void attack4();
-	int check_hp();
 
  	~enemy();
 
