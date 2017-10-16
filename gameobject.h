@@ -5,44 +5,37 @@
 
 class gameobject{
 public:
-
-	//
+	
 	//state variables
-	//
-
-	//constant state variables
 	std::string name;
-	int hpstat=1;
-	int atkstat=1;
-	int defstat=1;
-	int spdstat=1;
-
-	//battle variables
-	int hp=50;
-	int atk=1;
-	int def=1;
-	int spd=1;
+	int hp;
+	int atk;
+	int def;
+	int spd;
 	bool isdead=false;
 
-	//
-	//functions
-	//
+	int getcurrenthp();
+	int getcurrentatk();
+	int getcurrentdef();
+	int getcurrentspd();
+	virtual std::string getname();
+	
+	void changename(std::string newname);
+	void changehpstat(int newhp);
+	void changeatkstat(int newatk);
+	void changedefstat(int newdef);
+	void changespdstat(int newspd);
 	
 	//attack functions
-	void basicattack();
-	void attack1();
-	void attack2();
-	void attack3();
-	void attack4();
+	virtual void basicattack()=0;
+	virtual void attack1()=0;
+	virtual void attack2()=0;
+	virtual void attack3()=0;
+	virtual void attack4()=0;
 
-	//
-	virtual std::string getname();
-
-	//constructors
-
-	//death check function and destructor
+	//death check function
 	bool dead();
-	void takedmg(int dmg);
+	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
 	int check_hp();
 
 };

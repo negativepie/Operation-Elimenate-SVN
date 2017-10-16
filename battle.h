@@ -4,6 +4,7 @@
 #include "gameobject.h"
 #include "player.h"
 #include "enemy.h"
+#include "game.h"
 
 class battle{
 public:
@@ -17,21 +18,25 @@ public:
 	int currentlyattacking;
 	int participants;
 	int which_enemy;
+	int weather;
 	bool ischoosing;
+	int damage=0;
+
 	gameobject** battlearray;
+	game* gamestate;
 
 	//
 	//functions
 	//
 
 	battle();
-	battle(player user, enemy enemy1,enemy enemy2, enemy enemy3);
+	battle(player user, enemy enemy1,enemy enemy2, enemy enemy3,game* gameinput);
 	void chooseatk();
 	void battleturn();
-	void checkalive(gameobject obj);
 	void removeobject(int i);
 	void enemyatk();
 	void next_turn();
+	void weather_effect();
 	~battle();
 
 };

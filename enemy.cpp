@@ -11,19 +11,11 @@ enemy::enemy(){
 	def=1;
 	spd=1;
 	name="missingname";
-	alive=true;
+	
 }
 
 void enemy::changename(std::string newname){
 	name=newname;
-}
-
-void enemy::take_dmg(int n){
-	hp=hp-n;
-}
-
-int enemy::check_hp(){
-	return hp;
 }
 
 std::string enemy::getname(){
@@ -31,23 +23,23 @@ std::string enemy::getname(){
 }
 
 void enemy::basicattack(){
- std::cout<<"Basic Attack!"<<std::endl;
+ std::cout<<"Basic Attack!"<<std::endl<<std::endl;
 }
 
 void enemy::attack1(){
- std::cout<<"Attack 1!"<<std::endl;
+ std::cout<<"Attack 1!"<<std::endl<<std::endl;
 }
 
 void enemy::attack2(){
- std::cout<<"Attack 2!"<<std::endl;
+ std::cout<<"Attack 2!"<<std::endl<<std::endl;
 }
 
 void enemy::attack3(){
- std::cout<<"Attack 3!"<<std::endl;
+ std::cout<<"Attack 3!"<<std::endl<<std::endl;
 }
 
 void enemy::attack4(){
- std::cout<<"Attack 4!"<<std::endl;
+ std::cout<<"Attack 4!"<<std::endl<<std::endl;
 }
 
 enemy::~enemy(){
