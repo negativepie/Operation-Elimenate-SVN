@@ -54,7 +54,13 @@ void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
 }
 
 int gameobject::dmgoutput(){
-	return dmgout;
+	if(ismagic==true){
+		return dmgout+spatk;
+	}
+
+	else{
+		return dmgout+atk;
+	}
 }
 
 int gameobject::atktypeoutput(){

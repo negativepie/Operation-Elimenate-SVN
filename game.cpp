@@ -1,7 +1,7 @@
 #include "game.h"
 
 void game::gameIntro(){
-	std::cout << "Welcome to LITERAL FUCKING TOUHOU COPY 2: NOT DANMAKU EDITION" << std::endl << std::endl;
+	std::cout << "" << std::endl << std::endl;
 }
 
 void game::gameOver(){

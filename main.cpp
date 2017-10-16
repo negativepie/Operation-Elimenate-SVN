@@ -16,9 +16,9 @@ int main(){
 
 	//e x t e n s i v e t e s t i n g
 
-	//player reimu = player("Reimu",500,420,30,40,15,65);
+	player reimu = player("Reimu",500,420,30,40,15,65);
 
-	player reimu = player();
+	//player reimu = player();
 
 	enemy enemy1 = enemy();
 	enemy enemy2 = enemy();

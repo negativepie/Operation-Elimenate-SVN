@@ -6,11 +6,11 @@ enemy::enemy(){
 	name="Monster";
 
 	hpstat=500;
-	atkstat=420;
+	atkstat=30;
 	spatkstat=30;
 	defstat=40;
 	spdefstat=15;
-	spdstat=65;
+	spdstat=45;
 
 	hp=hpstat;
 	atk=atkstat;

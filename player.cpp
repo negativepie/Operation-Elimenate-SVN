@@ -6,7 +6,7 @@ player::player(){
 	name="Reimu Harukei";
 
 	hpstat=500;
-	atkstat=420;
+	atkstat=35;
 	spatkstat=30;
 	defstat=40;
 	spdefstat=15;
