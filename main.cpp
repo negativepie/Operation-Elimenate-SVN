@@ -23,6 +23,14 @@ int main(){
 	enemy2.changename("Monster B");
 	enemy3.changename("Monster C");
 
+	enemy1.changesound("ROAR A");
+	enemy2.changesound("ROAR B");
+	enemy3.changesound("ROAR C");
+
+	enemy1.change_death_cry("A goes pop");
+	enemy2.change_death_cry("B goes pop");
+	enemy3.change_death_cry("C goes pop");
+
 	//player * reimuptr = &reimu;
 	//enemy * enemyptr = &basicenemy;
 

@@ -11,6 +11,8 @@ enemy::enemy(){
 	spd=1;
 	name="missingname";
 	isdead=false;
+	sound="missing_sound";
+	death_cry="missing_sound";
 }
 
 void enemy::changename(std::string newname){
@@ -43,6 +45,22 @@ void enemy::attack3(){
 
 void enemy::attack4(){
  std::cout<<"Enemy Attack 4!"<<std::endl<<std::endl;
+}
+
+void enemy::changesound(std::string newsound){
+	sound=newsound;
+}
+
+void enemy::getsound(){
+std::cout<<sound<<std::endl<<std::endl;
+}
+
+void enemy::change_death_cry(std::string newsound){
+	death_cry=newsound;
+}
+
+void enemy::deathsound(){
+std::cout<<death_cry<<std::endl<<std::endl;
 }
 
 enemy::~enemy(){
