@@ -25,7 +25,7 @@ int main(){
 	enemy enemy2 = enemy();
 	enemy enemy3 = enemy();
 
-//	boss boss1= boss();
+	boss boss1= boss();
 
 	enemy1.changename("Monster A");
 	enemy2.changename("Monster B");
@@ -34,7 +34,7 @@ int main(){
 	//player * reimuptr = &reimu;
 	//enemy * enemyptr = &basicenemy;
 
-	battle firstbattle = battle(reimu,enemy1,enemy2,enemy3,gameptr);
+	battle firstbattle = battle(reimu,boss1,enemy2,enemy3,gameptr);
 	//std::cout << reimu.getname() << " you are now in a battle with a " << basicenemy.getname() << std::endl;
 	//firstbattle.chooseatk();
 

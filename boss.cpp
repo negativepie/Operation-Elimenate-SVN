@@ -40,3 +40,9 @@ void boss::get_cry(){
 void boss::get_death_cry(){
 	std::cout<<death_cry<<std::endl<<std::endl;
 } 
+
+boss::~boss(){
+
+}
+
+

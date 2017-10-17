@@ -15,7 +15,7 @@
 battle::battle(){
 }
 
-battle::battle(player user, enemy enemy1,enemy enemy2, enemy enemy3, game* gameinput){ //just pass through pointers
+battle::battle(player user, boss enemy1,enemy enemy2, enemy enemy3, game* gameinput){ //just pass through pointers
 	
 	battlearray=new gameobject*[4];
 	battlearray[0]=&user;
