@@ -22,8 +22,8 @@ std::string death_cry;
 void set_cry(std::string sound);
 void set_death_cry(std::string sound);
 
-void get_cry();
-void get_death_cry(); 
+std::string get_cry();
+std::string get_death_cry(); 
 
 
 	~boss();

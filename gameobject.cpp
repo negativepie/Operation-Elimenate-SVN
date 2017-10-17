@@ -34,12 +34,12 @@ void gameobject::set_death_cry(std::string sound){
 	death_cry=sound;
 }
 
- void gameobject::get_cry(){
- 	std::cout<<cry<<std::endl<<std::endl;
+ std::string gameobject::get_cry(){
+ 	return cry;
  }
 
- void gameobject::get_death_cry(){
- 	std::cout<<death_cry<<std::endl<<std::endl;
+ std::string gameobject::get_death_cry(){
+ 	return death_cry;
  }
 
 
