@@ -33,9 +33,17 @@ public:
 	bool ismagic;
 	int dmgout;
 
-	//
-	//functions
-	//
+	//sounds
+	std::string cry;
+	std::string death_cry;
+
+	//sound functions
+	void set_cry(std::string sound);
+	void set_death_cry(std::string sound);
+
+	virtual void get_cry();
+	virtual void get_death_cry(); 
+
 	
 	//attack functions
 	virtual void basicattack()=0;

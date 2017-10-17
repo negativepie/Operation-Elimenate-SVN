@@ -3,6 +3,7 @@
 #include "enemy.h"
 #include "gameobject.h"
 #include "battle.h"
+#include "boss.h"
 #include <stdlib.h>
 #include <ctime>
 
@@ -23,6 +24,8 @@ int main(){
 	enemy enemy1 = enemy();
 	enemy enemy2 = enemy();
 	enemy enemy3 = enemy();
+
+//	boss boss1= boss();
 
 	enemy1.changename("Monster A");
 	enemy2.changename("Monster B");

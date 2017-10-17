@@ -153,10 +153,17 @@ void battle::next_turn(){
 	} 
 
 	else{
-		std::cout << battlearray[which_enemy]->getname() << " has died" << std::endl<<std::endl;
+		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
+		if(which_enemy==1){
+		std::cout<<battlearray[0]->getname()<<" has leveled up"<<std::endl<<std::endl;
+		}
 		which_enemy++;
+		std::cout<<battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 		if(which_enemy<participants){
 		chooseatk();
+		}
+		else {
+		std::cout<<battlearray[0]->getname()<<" you have vanquished all the demons. The world is saved." <<std::endl<<std::endl;
 		}
 	}
 }

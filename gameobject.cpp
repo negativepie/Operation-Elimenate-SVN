@@ -13,6 +13,8 @@ gameobject::gameobject(){
 	spdstat=1;
 	spdefstat=1;
 	spatkstat=1;
+	cry="missing cry";
+	death_cry="missing death cry";
 
 	hp=hpstat;
 	atk=atkstat;
@@ -23,6 +25,23 @@ gameobject::gameobject(){
 
 	type=0;
 }
+
+void gameobject::set_cry(std::string sound){
+	cry=sound;
+}
+
+void gameobject::set_death_cry(std::string sound){
+	death_cry=sound;
+}
+
+ void gameobject::get_cry(){
+ 	std::cout<<cry<<std::endl<<std::endl;
+ }
+
+ void gameobject::get_death_cry(){
+ 	std::cout<<death_cry<<std::endl<<std::endl;
+ }
+
 
 bool gameobject::dead(){
 	if(hp<=0){
