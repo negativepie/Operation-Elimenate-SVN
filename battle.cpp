@@ -38,6 +38,8 @@ battle::battle(player user, boss enemy1,enemy enemy2, enemy enemy3, game* gamein
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 	std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
 	std::cout <<" "<<std::endl;
+
+//	std::cout<<battlearray[1]->getname() << " jumps forward and says " << battlearray[1]->get_cry()<<std::endl;
 	
 	next_turn();
 }
