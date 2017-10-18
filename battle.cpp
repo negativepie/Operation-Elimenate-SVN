@@ -20,7 +20,10 @@ battle::battle(){
 battle::battle(game* gameinput){ //just pass through pointers
 	participants=0;
 	battlearray=new gameobject*[participants];
-	int random_weather=std::rand()%5; 
+
+
+	int random_weather=rand()%5; 
+  
 	weather=random_weather;
 	
 	gamestate=gameinput;
@@ -63,15 +66,15 @@ void battle::addgameobject(gameobject *object){
 
 void battle::menu(){
 	std::cout<<"Welcome to Touhou Text RPG!"<<std::endl<<std::endl;
-	std::cout<<"Enter 1 to start"<<std::endl;
-	std::cout<<"Enter 2 for help"<<std::endl;
-	std::cout<<"Enter 3 for lore"<<std::endl;
-	std::cout<<"Enter 4 for credits"<<std::endl;
+	std::cout<<"Enter 0 to start"<<std::endl;
+	std::cout<<"Enter 1 for help"<<std::endl;
+	std::cout<<"Enter 2 for lore"<<std::endl;
+	std::cout<<"Enter 3 for credits"<<std::endl;
 
 	while(menu_choosing==true){
 		std::cin>> menu_status;
 
-			if(menu_status=="1"){
+			if(menu_status=="0"){
 					std::cout<<" "<<std::endl;
 					std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 					std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
@@ -81,24 +84,22 @@ void battle::menu(){
 					std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
 				    next_turn();
 			}
-			if(menu_status=="2"){
+			if(menu_status=="1"){
 				std::cout<<"You need to defeat all the enemies to win. You have 5 attacks to choose from."<<std::endl;
-				std::cout<<"1-Basic Attack"<<std::endl;
-				std::cout<<"2-Supersonic Elemental Drill!"<<std::endl;
-				std::cout<<"3-Demon Sealing Prayer: Holy Life Steal!"<<std::endl;
-				std::cout<<"4-Max Power Bullet Barrage"<<std::endl;
-				std::cout<<"5-Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl;
+				std::cout<<"0-Basic Attack"<<std::endl;
+				std::cout<<"1-Supersonic Elemental Drill!"<<std::endl;
+				std::cout<<"2-Demon Sealing Prayer: Holy Life Steal!"<<std::endl;
+				std::cout<<"3-Max Power Bullet Barrage"<<std::endl;
+				std::cout<<"4-Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl;
 				std::cout<<" "<<std::endl;
 				std::cout<<"Reimu gets stronger by absorbing the souls of defeated foes. Vanquish the elemental lords so that she can take down the final boss"<<std::endl;
 				std::cout<<" "<<std::endl;
-				std::cout<<"Watch out for the weather, especially sandstorm and hail!"<<std::endl;
-				std::cout<<" "<<std::endl; 
 			}
-			if(menu_status=="3"){
+			if(menu_status=="2"){
 				std::cout<<"Reimu is a magical girl fighting evil monsters trying to take over the Earth."<<std::endl;
 				std::cout<<"Defeat them all and restore peace to the world!"<<std::endl;
 			}
-			if(menu_status=="4"){
+			if(menu_status=="3"){
 				std::cout<<"This game was proudly brought to to you by Negativepie,Noramia and Kate98!"<<std::endl;
 			}
 	}
@@ -121,39 +122,39 @@ void battle::chooseatk(){
 		while(ischoosing==true){
 			std::cin >> atknumber;
 
-			if(atknumber=="1"){
+			if(atknumber=="0"){
 
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->basicattack();
+				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->magicoutput());
+				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
+			}
+
+			else if(atknumber=="1"){
+				ischoosing=false;
+				battlearray[0]->attack1();
+				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->magicoutput());
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			else if(atknumber=="2"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
-				battlearray[0]->attack1();
+				battlearray[0]->attack2();
+				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->magicoutput());
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			else if(atknumber=="3"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
-				battlearray[0]->attack2();
+				battlearray[0]->attack3();
+				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->magicoutput());
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
 			else if(atknumber=="4"){
 				ischoosing=false;
-				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
-				battlearray[0]->attack3();
-				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-			}
-
-			else if(atknumber=="5"){
-				ischoosing=false;
-				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack4();
+				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->magicoutput());
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 
 			}
@@ -205,31 +206,31 @@ void battle::enemyatk(){
 
 			if(random==0){
 				battlearray[which_enemy]->basicattack();
-				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->atktypeoutput(),battlearray[which_enemy]->magicoutput());
+				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->magicoutput());
 				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
 			}
 
 			if(random==1){
 				battlearray[which_enemy]->attack1();
-				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->atktypeoutput(),battlearray[which_enemy]->magicoutput());
+				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->magicoutput());
 				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
 			}
 
 			if(random==2){
 				battlearray[which_enemy]->attack2();
-				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->atktypeoutput(),battlearray[which_enemy]->magicoutput());
+				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->magicoutput());
 				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
 			}
 
 			if(random==3){
 				battlearray[which_enemy]->attack3();
-				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->atktypeoutput(),battlearray[which_enemy]->magicoutput());
+				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->magicoutput());
 				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
 			}
 
 			if(random==4){
 				battlearray[which_enemy]->attack4();
-				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->atktypeoutput(),battlearray[which_enemy]->magicoutput());
+				battlearray[0]->takedmg(battlearray[which_enemy]->dmgoutput(),battlearray[which_enemy]->magicoutput());
 				std::cout<< battlearray[0]->getname() <<" has  "<<battlearray[0]->check_hp()<<"  hp"<<std::endl<<std::endl;
 			}
 			ischoosing=true;
@@ -246,30 +247,10 @@ void battle::next_turn(){
 	} 
 
 	else{
-		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl;
-
-		switch(which_enemy){ //going to turn this into a switch statement
-
-		case 1:
-		std::cout<<battlearray[0]->getname()<<" has leveled up to level 2!"<<std::endl;
-		battlearray[0]->levelup();
-		std::cout<<battlearray[0]->getname()<<" has been promoted to an apprentice magician!"<<std::endl<<std::endl;
-        break;
-
-		case 2:
-		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl;
-		battlearray[0]->levelup();
-		std::cout<<battlearray[0]->getname()<<" has been promoted to a graduate magician!"<<std::endl<<std::endl;
-		break;
-
-		case 3:
-		std::cout<<battlearray[0]->getname()<<" has leveled up to level 4!"<<std::endl;
-		battlearray[0]->levelup();
-		std::cout<<battlearray[0]->getname()<<" has been promoted to a master magician!"<<std::endl<<std::endl;
-		break;
+		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
+		if(which_enemy==1){ //going to turn this into a switch statement
+		std::cout<<battlearray[0]->getname()<<" has leveled up"<<std::endl<<std::endl;
 		}
-
-
 		which_enemy++;
 		
 		if(which_enemy<participants){
@@ -288,10 +269,10 @@ void battle::weather_effect(){
 		std::cout<<" "<<std::endl;
 		std::cout<< "A sandstorm rages" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was hit by sandstorm" <<std::endl;
-		battlearray[0]->takedmg(1,0,false);
+		battlearray[0]->takedmg(1,false);
 		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was hit by sandstorm" <<std::endl;
-		battlearray[which_enemy]->takedmg(1,0,false);
+		battlearray[which_enemy]->takedmg(1,false);
 		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<< std::endl;
 		std::cout<<" "<<std::endl;
 	}
@@ -299,10 +280,10 @@ void battle::weather_effect(){
 		std::cout<<" "<<std::endl;
 		std::cout<< "It is hailing" <<std::endl;
 		std::cout<< battlearray[0]->getname() << " was struck by hail" <<std::endl;
-		battlearray[0]->takedmg(1,0,false);
+		battlearray[0]->takedmg(1,false);
 		std::cout<< battlearray[0]->getname() << " has " << battlearray[0]->check_hp()<<std::endl;
 		std::cout<< battlearray[which_enemy]->getname() << " was struck by hail" <<std::endl;
-		battlearray[which_enemy]->takedmg(1,0,false);
+		battlearray[which_enemy]->takedmg(1,false);
 		std::cout<< battlearray[which_enemy]->getname() << " has " << battlearray[which_enemy]->check_hp()<<" hp left"<<std::endl;
 		std::cout<<" "<<std::endl;
 	}
@@ -331,12 +312,3 @@ void battle::weather_effect(){
 battle::~battle(){
 	delete[] battlearray;
 }
-
-
-/*
-Test cases for attacking and taking damage
-
-Run game and go through attacks 0-4. Enemy is taking damage accordingly. 
-Type in any other number and it gives the error string. 
-
-*/

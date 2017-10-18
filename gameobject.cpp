@@ -10,7 +10,6 @@ gameobject::gameobject(){
 	hpstat=500;
 	atkstat=1;
 	defstat=1;
-	spdstat=1;
 	spdefstat=1;
 	spatkstat=1;
 	cry="missing cry";
@@ -19,11 +18,8 @@ gameobject::gameobject(){
 	hp=hpstat;
 	atk=atkstat;
 	def=defstat;
-	spd=spdstat;
 	spdef=spdefstat;
 	spatk=spatkstat;
-
-	type=0;
 }
 
 void gameobject::set_cry(std::string sound){
@@ -52,7 +48,7 @@ bool gameobject::dead(){
 	
 }
 
-void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
+void gameobject::takedmg(int dmg, bool isincomingmagic){
 	if(isincomingmagic==true){
 		dmg=dmg+ceil(dmg/spdef);
 	}
@@ -82,10 +78,6 @@ int gameobject::dmgoutput(){
 	}
 }
 
-int gameobject::atktypeoutput(){
-	return atktype;
-}
-
 bool gameobject::magicoutput(){
 	return ismagic;
 }
@@ -108,10 +100,6 @@ void gameobject::attack3(){
 
 void gameobject::attack4(){
 
-}
-
-void gameobject::levelup(){
-	
 }
 
 
@@ -165,10 +153,6 @@ int gameobject::getdefstat(){
 	return defstat;
 }
 
-int gameobject::getspdstat(){
-	return spdstat;
-}
-
 
 
 int gameobject::getcurrenthp(){
@@ -182,11 +166,6 @@ int gameobject::getcurrentatk(){
 int gameobject::getcurrentdef(){
 	return def;
 }
-
-int gameobject::getcurrentspd(){
-	return spd;
-}
-
 
 
 void gameobject::changename(std::string newname){
@@ -203,10 +182,6 @@ void gameobject::changeatkstat(int newatk){
 
 void gameobject::changedefstat(int newdef){
 	defstat=newdef;
-}
-
-void gameobject::changespdstat(int newspd){
-	spdstat=newspd;
 }
 
 gameobject::~gameobject(){

@@ -8,28 +8,24 @@ boss::boss(){
 }
 
 void boss::basicattack(){
- atktype=0;
  ismagic=false;
  dmgout=100;
  std::cout<<"Unbalanced Weighting"<<std::endl<<std::endl;
 }
 
 void boss::attack1(){
- atktype=0;
  ismagic=true;
  dmgout=100;
  std::cout<<"Unforgiving Scripts"<<std::endl<<std::endl;
 }
 
 void boss::attack2(){
- atktype=1;
  ismagic=true;
  dmgout=90;
  std::cout<<"You Had a Space!!"<<std::endl<<std::endl;
 }
 
 void boss::attack3(){
- atktype=0;
  ismagic=false;
  dmgout=0;
 
@@ -43,7 +39,6 @@ void boss::attack3(){
 }
 
 void boss::attack4(){
- atktype=0;
  ismagic=true;
  dmgout=9999;
  std::cout<<"Syntax Error"<<std::endl<<std::endl;
@@ -63,10 +58,6 @@ std::string boss::get_cry(){
 std::string boss::get_death_cry(){
 	return death_cry;
 } 
-
-void boss::levelup(){
-	//placeholder
-}
 
 boss::~boss(){
 

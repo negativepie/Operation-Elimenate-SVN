@@ -29,7 +29,6 @@ public:
 	int spatk;
 	
 	int type=0;
-	int atktype;
 	bool ismagic;
 	int dmgout;
 
@@ -52,23 +51,19 @@ public:
 	virtual void attack3()=0;
 	virtual void attack4()=0;
 
-	//level up
-	virtual void levelup()=0;
-
 	
 	//constructors
 	gameobject();
 
 	//death checking and damage
 	bool dead();
-	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
+	void takedmg(int dmg, bool isincomingmagic);
 	int check_hp();
 
 	void postbattlestatcheck();
 	void checkhpover();
 
 	int dmgoutput();
-	int atktypeoutput();
 	bool magicoutput();
 
 
@@ -76,18 +71,15 @@ public:
 	int gethpstat();
 	int getatkstat();
 	int getdefstat();
-	int getspdstat();
 
 	int getcurrenthp();
 	int getcurrentatk();
 	int getcurrentdef();
-	int getcurrentspd();
 
 	void changename(std::string newname);
 	void changehpstat(int newhp);
 	void changeatkstat(int newatk);
 	void changedefstat(int newdef);
-	void changespdstat(int newspd);
 
 	//destructor
 	~gameobject();
