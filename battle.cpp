@@ -62,15 +62,15 @@ void battle::addgameobject(gameobject *object){
 
 void battle::menu(){
 	std::cout<<"Welcome to Touhou Text RPG!"<<std::endl<<std::endl;
-	std::cout<<"Enter 0 to start"<<std::endl;
-	std::cout<<"Enter 1 for help"<<std::endl;
-	std::cout<<"Enter 2 for lore"<<std::endl;
-	std::cout<<"Enter 3 for credits"<<std::endl;
+	std::cout<<"Enter 1 to start"<<std::endl;
+	std::cout<<"Enter 2 for help"<<std::endl;
+	std::cout<<"Enter 3 for lore"<<std::endl;
+	std::cout<<"Enter 4 for credits"<<std::endl;
 
 	while(menu_choosing==true){
 		std::cin>> menu_status;
 
-			if(menu_status=="0"){
+			if(menu_status=="1"){
 					std::cout<<" "<<std::endl;
 					std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 					std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
@@ -80,22 +80,22 @@ void battle::menu(){
 					std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
 				    next_turn();
 			}
-			if(menu_status=="1"){
+			if(menu_status=="2"){
 				std::cout<<"You need to defeat all the enemies to win. You have 5 attacks to choose from."<<std::endl;
-				std::cout<<"0-Basic Attack"<<std::endl;
-				std::cout<<"1-Supersonic Elemental Drill!"<<std::endl;
-				std::cout<<"2-Demon Sealing Prayer: Holy Life Steal!"<<std::endl;
-				std::cout<<"3-Max Power Bullet Barrage"<<std::endl;
-				std::cout<<"4-Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl;
+				std::cout<<"1-Basic Attack"<<std::endl;
+				std::cout<<"2-Supersonic Elemental Drill!"<<std::endl;
+				std::cout<<"3-Demon Sealing Prayer: Holy Life Steal!"<<std::endl;
+				std::cout<<"4-Max Power Bullet Barrage"<<std::endl;
+				std::cout<<"5-Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl;
 				std::cout<<" "<<std::endl;
 				std::cout<<"Reimu gets stronger by absorbing the souls of defeated foes. Vanquish the elemental lords so that she can take down the final boss"<<std::endl;
 				std::cout<<" "<<std::endl;
 			}
-			if(menu_status=="2"){
+			if(menu_status=="3"){
 				std::cout<<"Reimu is a magical girl fighting evil monsters trying to take over the Earth."<<std::endl;
 				std::cout<<"Defeat them all and restore peace to the world!"<<std::endl;
 			}
-			if(menu_status=="3"){
+			if(menu_status=="4"){
 				std::cout<<"This game was proudly brought to to you by Negativepie,Noramia and Kate98!"<<std::endl;
 			}
 	}
@@ -118,7 +118,7 @@ void battle::chooseatk(){
 		while(ischoosing==true){
 			std::cin >> atknumber;
 
-			if(atknumber=="0"){
+			if(atknumber=="1"){
 
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
@@ -126,28 +126,28 @@ void battle::chooseatk(){
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
-			else if(atknumber=="1"){
+			else if(atknumber=="2"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack1();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
-			else if(atknumber=="2"){
+			else if(atknumber=="3"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack2();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
-			else if(atknumber=="3"){
+			else if(atknumber=="4"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack3();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 			}
 
-			else if(atknumber=="4"){
+			else if(atknumber=="5"){
 				ischoosing=false;
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack4();
@@ -212,9 +212,24 @@ void battle::next_turn(){
 
 	else{
 		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
-		if(which_enemy==1){ //going to turn this into a switch statement
-		std::cout<<battlearray[0]->getname()<<" has leveled up"<<std::endl<<std::endl;
+
+		switch(which_enemy){ //going to turn this into a switch statement
+
+		case 1:
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 2!"<<std::endl<<std::endl;
+		
+		break;
+
+		case 2:
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl<<std::endl;
+		break;
+
+		case 3:
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl<<std::endl;
+		break;
 		}
+
+
 		which_enemy++;
 		
 		if(which_enemy<participants){
