@@ -165,18 +165,28 @@ void battle::chooseatk(){
 				switch(weather_stick){
 					case 0:
 					weather=sandstorm;
+					std::cout<<"Weather Stick summoned a sandstorm"<<std::endl;
+					break;
 
 					case 1:
 					weather=hail;
+					std::cout<<"Weather Stick summoned hail"<<std::endl; 
+					break;
 
 					case 2:
 					weather=sun;
+					std::cout<<"Weather Stick summoned a sunny day"<<std::endl;
+					break;
 
 					case 3:
 					weather=hurricane;
+					std::cout<<"Weather Stick brought forth a hurricane"<<std::endl;
+					break;
 
 					case 4:
 					weather=rain;
+					std::cout<<"Weather Stick summoned a deluge"<<std::endl; 
+					break;
 				}
 			}
 
