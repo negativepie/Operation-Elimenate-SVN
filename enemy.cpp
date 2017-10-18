@@ -42,41 +42,35 @@ void enemy::basicattack(){
 	atktype=0;
 	ismagic=false;
 	dmgout=5;
- 	std::cout<<name<<" Used a Basic Attack!"<<std::endl<<std::endl;
+ std::cout<<"Basic Enemy Attack!"<<std::endl<<std::endl;
 }
 
 void enemy::attack1(){
 	atktype=0;
-	ismagic=true;
-	dmgout=13;
- 	std::cout<<name<<" Used Lesser Curse!"<<std::endl<<std::endl;
+	ismagic=false;
+	dmgout=5;
+ std::cout<<"Enemy Attack 1!"<<std::endl<<std::endl;
 }
 
 void enemy::attack2(){
 	atktype=0;
 	ismagic=false;
-	dmgout=20;
- 	std::cout<<name<<" Used Body Slam!"<<std::endl<<std::endl;
+	dmgout=5;
+ std::cout<<"Enemy Attack 2!"<<std::endl<<std::endl;
 }
 
 void enemy::attack3(){
-	atktype=3;
-	ismagic=true;
-	dmgout=30;
- 	std::cout<<name<<" Used Lesser Fire Magic!"<<std::endl<<std::endl;
+	atktype=0;
+	ismagic=false;
+	dmgout=5;
+ std::cout<<"Enemy Attack 3!"<<std::endl<<std::endl;
 }
 
 void enemy::attack4(){
-	if(hp/hpstat<35){
-		atktype=0;
-		ismagic=true;
-		dmgout=45;
-		std::cout<<name<<" Infused its body with magical demon energy and used Enraged Attack!"<<std::endl<<std::endl;
-	}
-
-	else{
-		std::cout<<name<< "Did nothing."<<std::endl<<std::endl;
-	}
+	atktype=0;
+	ismagic=false;
+	dmgout=5;
+ std::cout<<"Enemy Attack 4!"<<std::endl<<std::endl;
 }
 
 enemy::~enemy(){

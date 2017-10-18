@@ -8,9 +8,6 @@ boss::boss(){
 }
 
 void boss::basicattack(){
- atktype=0;
- ismagic=false;
- dmgout=100;
  std::cout<<"Boss Attack!"<<std::endl<<std::endl;
 }
 
@@ -23,23 +20,10 @@ void boss::attack2(){
 }
 
 void boss::attack3(){
- atktype=0;
- ismagic=false;
- dmgout=0;
-
- hp=hpstat;
- atk=9999;
- def=9999;
- spdef=9999;
- spatk=9999;
-
  std::cout<<"You Missed a Space!"<<std::endl<<std::endl;
 }
 
 void boss::attack4(){
- atktype=0;
- ismagic=true;
- dmgout=9999;
  std::cout<<"Syntax Error"<<std::endl<<std::endl;
 }
 

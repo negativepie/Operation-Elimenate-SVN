@@ -15,13 +15,13 @@
 battle::battle(){
 }
 
-battle::battle(player *user, boss *enemy1,enemy *enemy2, enemy *enemy3, game* gameinput){ //just pass through pointers
+battle::battle(player user, boss enemy1,enemy enemy2, enemy enemy3, game* gameinput){ //just pass through pointers
 	
 	battlearray=new gameobject*[4];
-	battlearray[0]=user;
-	battlearray[1]=enemy1;
-	battlearray[2]=enemy2;
-	battlearray[3]=enemy3;
+	battlearray[0]=&user;
+	battlearray[1]=&enemy1;
+	battlearray[2]=&enemy2;
+	battlearray[3]=&enemy3;
 	
 	
 	int random_weather=std::rand()%5;
@@ -35,8 +35,6 @@ battle::battle(player *user, boss *enemy1,enemy *enemy2, enemy *enemy3, game* ga
 	participants=4;
 	ischoosing=true;
 
-	//menu stuff
-
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 	std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
 	std::cout <<" "<<std::endl;
@@ -45,14 +43,6 @@ battle::battle(player *user, boss *enemy1,enemy *enemy2, enemy *enemy3, game* ga
 	std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
 	
 	next_turn();
-}
-
-void battle::menu(){
-	std::cout<<"Welcome to Touhou Text RPG!"<<std::endl<<std::endl;
-	std::cout<<"Enter 1 to start"<<std::endl;
-	std::cout<<"Enter 2 for help"<<std::endl;
-	std::cout<<"Enter 3 for lore"<<std::endl;
-	std::cout<<"Enter 4 for credits"<<std::endl;
 }
 
 void battle::battleturn(){
@@ -162,13 +152,12 @@ void battle::next_turn(){
 
 	else{
 		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
-		if(which_enemy==1){ //going to turn this into a switch statement
+		if(which_enemy==1){
 		std::cout<<battlearray[0]->getname()<<" has leveled up"<<std::endl<<std::endl;
 		}
 		which_enemy++;
-		
-		if(which_enemy<participants){
 		std::cout<<battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
+		if(which_enemy<participants){
 		chooseatk();
 		}
 		else {
