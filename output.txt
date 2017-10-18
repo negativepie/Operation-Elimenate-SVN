@@ -1,0 +1,40 @@
+
+
+Welcome to Touhou Text RPG!
+
+Enter 1 to start
+Enter 2 for help
+Enter 3 for lore
+Enter 4 for credits
+
+Reimu you are now in a battle with a Lesser Demon
+Basic Attack:0, Special Attacks: 1-4
+Lesser Demon lunges foward.
+Grah!
+
+which attack would you like to use?
+
+Reimu Attacks with a basic attack!
+
+Lesser Demon has  0  hp
+Lesser Demon Used a Basic Attack!
+
+Reimu has  615  hp
+
+
+It is hailing
+Reimu was struck by hail
+Reimu has 614
+Lesser Demon was struck by hail
+Lesser Demon has 0 hp left
+
+Lesser Demon has been slain
+Reimu has leveled up to level 2!
+
+The vanquished enemy soul strengthens your magic.
+Your HP has been replenished
+
+Reimu has been promoted to an apprentice magician!
+
+Reimu you have vanquished all the demons. The world is saved.
+
