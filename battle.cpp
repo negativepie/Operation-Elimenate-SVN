@@ -4,6 +4,8 @@
 #include "battle.h"
 #include "game.h"
 
+
+
 	int hurricane=0;
 	int sandstorm=1;
 	int rain=2;
@@ -18,9 +20,7 @@ battle::battle(){
 battle::battle(game* gameinput){ //just pass through pointers
 	participants=0;
 	battlearray=new gameobject*[participants];
-	
-	int random_weather=std::rand()%5;
-	int weather_stick; 
+	int random_weather=std::rand()%5; 
 	weather=random_weather;
 	
 	gamestate=gameinput;
@@ -160,7 +160,8 @@ void battle::chooseatk(){
 			else if(atknumber=="6"){
 				std::cout<<"Go Weather Stick!"<<std::endl; 
 				ischoosing=false;
-				int weather_stick=std::rand()%5;
+				weather_stick=rand()%5;
+				std::cout<<"Weather Stick value is "<<weather_stick<<std::endl; 
 				switch(weather_stick){
 					case 0:
 					weather=sandstorm;

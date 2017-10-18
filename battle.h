@@ -21,6 +21,7 @@ public:
 	int participants;
 	int which_enemy;
 	int weather;
+	int weather_stick; 
 	bool ischoosing;
 	gameobject** battlearray;
 	game* gamestate;
