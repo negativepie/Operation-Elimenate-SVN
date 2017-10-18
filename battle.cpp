@@ -76,10 +76,12 @@ void battle::menu(){
 				std::cout<<"3-Demon Sealing Prayer: Holy Life Steal!"<<std::endl;
 				std::cout<<"4-Max Power Bullet Barrage"<<std::endl;
 				std::cout<<"5-Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl;
+				std::cout<<"6-Weather Stick (utility move)"<<std::endl;
 				std::cout<<" "<<std::endl;
 				std::cout<<"Reimu gets stronger by absorbing the souls of defeated foes. Vanquish the elemental lords so that she can take down the final boss"<<std::endl;
 				std::cout<<" "<<std::endl;
 				std::cout<<"Watch out for the weather, especially sandstorm and hail!"<<std::endl;
+				std::cout<<"You can use your weather stick to change the weather. Be careful, it's still a prototype!"<<std::endl;
 				std::cout<<" "<<std::endl; 
 			}
 			if(menu_status=="3"){
@@ -153,27 +155,32 @@ void battle::chooseatk(){
 				switch(weather_stick){
 					case 0:
 					weather=sandstorm;
-					std::cout<<"Weather Stick summoned a sandstorm"<<std::endl;
+					std::cout<<"Weather Stick glowed yellow."<<std::endl;
+					std::cout<<"Weather Stick summoned a sandstorm."<<std::endl;
 					break;
 
 					case 1:
 					weather=hail;
-					std::cout<<"Weather Stick summoned hail"<<std::endl; 
+					std::cout<<"Weather Stick glowed white."<<std::endl; 
+					std::cout<<"Weather Stick summoned hail."<<std::endl; 
 					break;
 
 					case 2:
 					weather=sun;
-					std::cout<<"Weather Stick summoned a sunny day"<<std::endl;
+					std::cout<<"Weather Stick glowed red"<<std::endl;
+					std::cout<<"Weather Stick summoned a sunny day."<<std::endl;
 					break;
 
 					case 3:
 					weather=hurricane;
-					std::cout<<"Weather Stick brought forth a hurricane"<<std::endl;
+					std::cout<<"Weather Stick glowed green."<<std::endl;
+					std::cout<<"Weather Stick brought forth a hurricane."<<std::endl;
 					break;
 
 					case 4:
 					weather=rain;
-					std::cout<<"Weather Stick summoned a deluge"<<std::endl; 
+					std::cout<<"Weather Stick glowed dark blue."<<std::endl; 
+					std::cout<<"Weather Stick summoned a deluge."<<std::endl; 
 					break;
 				}
 			}
