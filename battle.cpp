@@ -217,6 +217,7 @@ void battle::next_turn(){
 
 		case 1:
 		std::cout<<battlearray[0]->getname()<<" has leveled up to level 2!"<<std::endl<<std::endl;
+		battlearray[0]->levelup();
 		
 		break;
 

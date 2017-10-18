@@ -47,6 +47,10 @@ std::string rock::get_death_cry(){
 	return death_cry;
 } 
 
+void rock::levelup(){
+	//placeholder
+}
+
 rock::~rock(){
 
 }

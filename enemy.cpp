@@ -79,6 +79,10 @@ void enemy::attack4(){
 	}
 }
 
+void enemy::levelup(){
+	//placeholder
+}
+
 enemy::~enemy(){
 
 }

@@ -52,6 +52,10 @@ std::string fire::get_death_cry(){
 	return death_cry;
 } 
 
+void fire::levelup(){
+	//placeholder
+}
+
 fire::~fire(){
 
 }

@@ -64,6 +64,10 @@ std::string boss::get_death_cry(){
 	return death_cry;
 } 
 
+void boss::levelup(){
+	//placeholder
+}
+
 boss::~boss(){
 
 }
