@@ -18,10 +18,10 @@ battle::battle(){
 battle::battle(player *user, boss *enemy1,enemy *enemy2, enemy *enemy3, game* gameinput){ //just pass through pointers
 	
 	battlearray=new gameobject*[4];
-	battlearray[0]=&user;
-	battlearray[1]=&enemy1;
-	battlearray[2]=&enemy2;
-	battlearray[3]=&enemy3;
+	battlearray[0]=user;
+	battlearray[1]=enemy1;
+	battlearray[2]=enemy2;
+	battlearray[3]=enemy3;
 	
 	
 	int random_weather=std::rand()%5;

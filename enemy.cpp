@@ -42,7 +42,7 @@ void enemy::basicattack(){
 	atktype=0;
 	ismagic=false;
 	dmgout=5;
- 	std::cout<name<<<" Used a Basic Attack!"<<std::endl<<std::endl;
+ 	std::cout<<name<<" Used a Basic Attack!"<<std::endl<<std::endl;
 }
 
 void enemy::attack1(){
@@ -75,7 +75,7 @@ void enemy::attack4(){
 	}
 
 	else{
-		std::cout<<name<< "Did nothing."
+		std::cout<<name<< "Did nothing."<<std::endl<<std::endl;
 	}
 }
 

@@ -35,18 +35,9 @@ int main(){
 	enemy * enemyptr1 = &enemy1;
 	enemy * enemyptr2 = &enemy2;
 	enemy * enemyptr3 = &enemy3;
-	boss * bossptr=&boss1
+	boss * bossptr=&boss1;
 
-	battle firstbattle = battle(reimuptr,boss1ptr,enemy2ptr,enemy3ptr,gameptr);
-	//std::cout << reimu.getname() << " you are now in a battle with a " << basicenemy.getname() << std::endl;
-	//firstbattle.chooseatk();
-
-	/*
-	//name and stats testing testing
-	std::cout << "The name of your player is " << reimu.getname() << std::endl;
-	reimu.changename("Marisa Kirisame");
-	std::cout << "The name of your player is now " << reimu.getname() << std::endl;
-	*/
+	battle firstbattle = battle(reimuptr,bossptr,enemyptr2,enemyptr3,gameptr);
 	
 	return 0;
 	
