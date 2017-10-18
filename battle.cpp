@@ -4,6 +4,8 @@
 #include "battle.h"
 #include "game.h"
 
+
+
 	int hurricane=0;
 	int sandstorm=1;
 	int rain=2;
@@ -18,8 +20,10 @@ battle::battle(){
 battle::battle(game* gameinput){ //just pass through pointers
 	participants=0;
 	battlearray=new gameobject*[participants];
-	
-	int random_weather=std::rand()%5;
+
+
+	int random_weather=rand()%5; 
+  
 	weather=random_weather;
 	
 	gamestate=gameinput;
@@ -153,6 +157,38 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->magicoutput());
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 
+			}
+			else if(atknumber=="6"){
+				std::cout<<"Go Weather Stick!"<<std::endl; 
+				ischoosing=false;
+				weather_stick=rand()%5;
+				std::cout<<"Weather Stick value is "<<weather_stick<<std::endl; 
+				switch(weather_stick){
+					case 0:
+					weather=sandstorm;
+					std::cout<<"Weather Stick summoned a sandstorm"<<std::endl;
+					break;
+
+					case 1:
+					weather=hail;
+					std::cout<<"Weather Stick summoned hail"<<std::endl; 
+					break;
+
+					case 2:
+					weather=sun;
+					std::cout<<"Weather Stick summoned a sunny day"<<std::endl;
+					break;
+
+					case 3:
+					weather=hurricane;
+					std::cout<<"Weather Stick brought forth a hurricane"<<std::endl;
+					break;
+
+					case 4:
+					weather=rain;
+					std::cout<<"Weather Stick summoned a deluge"<<std::endl; 
+					break;
+				}
 			}
 
 			else{
