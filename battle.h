@@ -24,6 +24,8 @@ public:
 	gameobject** battlearray;
 	game* gamestate;
 
+	
+
 	//
 	//functions
 	//
@@ -36,6 +38,7 @@ public:
 	void enemyatk();
 	void next_turn();
 	void weather_effect();
+	void menu();
 	~battle();
 
 };
