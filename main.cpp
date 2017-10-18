@@ -17,24 +17,26 @@ int main(){
 
 	//e x t e n s i v e t e s t i n g
 
-	player reimu = player("Reimu",500,420,30,40,15,65);
+	//player reimu = player("Reimu",500,420,30,40,15,65);
 
-	//player reimu = player();
+	player reimu = player();
 
 	enemy enemy1 = enemy();
 	enemy enemy2 = enemy();
 	enemy enemy3 = enemy();
 
-	boss boss1= boss();
+//	boss boss1= boss();
 
 	enemy1.changename("Monster A");
 	enemy2.changename("Monster B");
 	enemy3.changename("Monster C");
 
-	//player * reimuptr = &reimu;
-	//enemy * enemyptr = &basicenemy;
+	player * reimuptr = &reimu;
+	enemy * enemyptr1 = &enemy1;
+	enemy * enemyptr2 = &enemy2;
+	enemy * enemyptr3 = &enemy3;
 
-	battle firstbattle = battle(reimu,boss1,enemy2,enemy3,gameptr);
+	battle firstbattle = battle(reimuptr,enemyptr1,enemyptr2,enemyptr3,gameptr);
 	//std::cout << reimu.getname() << " you are now in a battle with a " << basicenemy.getname() << std::endl;
 	//firstbattle.chooseatk();
 

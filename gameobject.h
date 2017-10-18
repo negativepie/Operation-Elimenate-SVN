@@ -41,8 +41,8 @@ public:
 	void set_cry(std::string sound);
 	void set_death_cry(std::string sound);
 
-	virtual std::string get_cry();
-	virtual std::string get_death_cry(); 
+	virtual void get_cry();
+	virtual void get_death_cry(); 
 
 	
 	//attack functions
