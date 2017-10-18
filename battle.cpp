@@ -20,6 +20,7 @@ battle::battle(game* gameinput){ //just pass through pointers
 	battlearray=new gameobject*[participants];
 	
 	int random_weather=std::rand()%5;
+	int weather_stick; 
 	weather=random_weather;
 	
 	gamestate=gameinput;
@@ -155,6 +156,27 @@ void battle::chooseatk(){
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
 
+			}
+			else if(atknumber=="6"){
+				std::cout<<"Go Weather Stick!"<<std::endl; 
+				ischoosing=false;
+				int weather_stick=std::rand()%5;
+				switch(weather_stick){
+					case 0:
+					weather=sandstorm;
+
+					case 1:
+					weather=hail;
+
+					case 2:
+					weather=sun;
+
+					case 3:
+					weather=hurricane;
+
+					case 4:
+					weather=rain;
+				}
 			}
 
 			else{
