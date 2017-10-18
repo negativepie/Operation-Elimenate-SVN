@@ -212,9 +212,22 @@ void battle::next_turn(){
 
 	else{
 		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
-		if(which_enemy==1){ //going to turn this into a switch statement
-		std::cout<<battlearray[0]->getname()<<" has leveled up"<<std::endl<<std::endl;
+		switch(which_enemy){ //going to turn this into a switch statement
+
+		case '1':
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 2!"<<std::endl<<std::endl;
+		break;
+
+		case '2':
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl<<std::endl;
+		break;
+
+		case'3':
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl<<std::endl;
+		break;
 		}
+
+
 		which_enemy++;
 		
 		if(which_enemy<participants){
