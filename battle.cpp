@@ -62,7 +62,7 @@ void battle::menu(){
 			if(menu_status=="1"){
 					std::cout<<" "<<std::endl;
 					std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
-					std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
+					std::cout << "Basic Attack:1, Special Attacks: 2-5, Weather Stick:6"<<std::endl;
 					std::cout <<" "<<std::endl;
 
 					std::cout<<battlearray[1]->getname() << " lunges foward." <<std::endl;
@@ -186,7 +186,7 @@ void battle::chooseatk(){
 			}
 
 			else{
-				std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
+				std::cout << "you only have a basic attack (1),special attacks (2-5) and weather stick (6) at the moment, please choose a number between 1-6 for your basic attack" << std::endl;
 			}
 		}
 	enemyatk();
