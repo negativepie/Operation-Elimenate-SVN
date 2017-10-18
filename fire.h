@@ -7,6 +7,7 @@
 class fire:public enemy{
 public:
 	fire();
+	fire(std::string initialname, int initialhp, int initialatk, int initialspatk, int initialspdef, int initialdef);
 
 
 void basicattack();
@@ -26,10 +27,7 @@ void set_death_cry(std::string sound);
 std::string get_cry();
 std::string get_death_cry(); 
 
-void levelup();
-
-~fire();
-
+	~fire();
 
 };
 

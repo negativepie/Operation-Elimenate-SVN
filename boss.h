@@ -25,9 +25,6 @@ void set_death_cry(std::string sound);
 std::string get_cry();
 std::string get_death_cry(); 
 
-//placeholder
-
-void levelup();
 
 	~boss();
 };

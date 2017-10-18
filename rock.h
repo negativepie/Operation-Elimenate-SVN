@@ -7,6 +7,7 @@
 class rock:public enemy{
 public:
 	rock();
+	rock(std::string initialname, int initialhp, int initialatk, int initialspatk, int initialspdef, int initialdef);
 
 void basicattack();
 void attack1();
@@ -24,10 +25,6 @@ void set_death_cry(std::string sound);
 
 std::string get_cry();
 std::string get_death_cry(); 
-
-//placeholders
-
-void levelup();
 
 	~rock();
 };
