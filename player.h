@@ -21,6 +21,7 @@ public:
 	void attack2();
 	void attack3();
 	void attack4();
+	void levelup();
 
 	//destructor
 	~player();

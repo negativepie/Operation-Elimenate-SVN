@@ -3,10 +3,10 @@
 
 fire::fire(){
  cry="You shall all be burnt to a crisp.";
- death_cry="and now only flickering embers remain.";
+ death_cry=" and now only flickering embers remain.";
  name="Fire Elemental: Shinmyoumaru Sukuna";
 
- 	hpstat=1000;
+  	hpstat=1000;
 	atkstat=30;
 	spatkstat=90;
 	defstat=20;
@@ -73,6 +73,10 @@ std::string fire::get_cry(){
 std::string fire::get_death_cry(){
 	return death_cry;
 } 
+
+void fire::levelup(){
+	//placeholder
+}
 
 fire::~fire(){
 

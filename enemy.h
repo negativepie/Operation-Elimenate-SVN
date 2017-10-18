@@ -15,6 +15,7 @@ public:
 	virtual void attack2();
 	virtual void attack3();
 	virtual void attack4();
+	virtual void levelup();
 
  	~enemy();
 

@@ -4,14 +4,14 @@
 rock::rock(){
  cry="Your corpse shall be buried in the sands, where it will be forever forgotten";
  death_cry=" disintegrated into sand.";
- name="Earth Elemental: BRUCE U VI VON ZULUL WELCOME TO UGANDA ZULUL forsenE ZULUL";
+ name="Earth Elemental: Titan Obelisk of the Eastern Mountains";
 
 
 	hpstat=1000;
-	atkstat=60;
+	atkstat=85;
 	spatkstat=10;
 	defstat=110;
-	spdefstat=50;
+	spdefstat=20;
 
 	hp=hpstat;
 	atk=atkstat;
@@ -21,7 +21,19 @@ rock::rock(){
 }
 
 rock::rock(std::string initialname, int initialhp, int initialatk, int initialspatk, int initialspdef, int initialdef){
+	name=initialname;
 
+	hpstat=initialhp;
+	atkstat=initialatk;
+	spatkstat=initialspatk;
+	defstat=initialdef;
+	spdefstat=initialspdef;
+
+	hp=hpstat;
+	atk=atkstat;
+	spatk=spatkstat;
+	def=defstat;
+	spdef=spdefstat;
 }
 
 void rock::basicattack(){
@@ -69,6 +81,10 @@ std::string rock::get_cry(){
 std::string rock::get_death_cry(){
 	return death_cry;
 } 
+
+void rock::levelup(){
+	//placeholder
+}
 
 rock::~rock(){
 

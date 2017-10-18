@@ -69,8 +69,12 @@ void enemy::attack4(){
 	}
 
 	else{
-		std::cout<<name<< "Missed Attack!"<<std::endl<<std::endl;
+		std::cout<<name<< "Did nothing."<<std::endl<<std::endl;
 	}
+}
+
+void enemy::levelup(){
+	//placeholder
 }
 
 enemy::~enemy(){

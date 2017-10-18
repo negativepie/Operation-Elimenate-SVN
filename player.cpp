@@ -5,11 +5,11 @@
 player::player(){
 	name="Reimu Harukei";
 
-	hpstat=500;
-	atkstat=35;
-	spatkstat=30;
-	defstat=40;
-	spdefstat=15;
+	hpstat=750;
+	atkstat=65;
+	spatkstat=80;
+	defstat=50;
+	spdefstat=55;
 
 	hp=hpstat;
 	atk=atkstat;
@@ -50,7 +50,7 @@ void player::attack2(){
 	ismagic=true;
 	dmgout=15;
 
-	hp=hp+100+rand()%36;
+	hp=hp+100+rand()%150;
 
 	checkhpover();
 
@@ -66,8 +66,27 @@ void player::attack3(){
 
 void player::attack4(){
 	ismagic=true;
-	dmgout=99+rand()%76;
+	dmgout=100+rand()%76;
 	std::cout<<name<<" Used Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl<<std::endl;
+}
+
+void player::levelup(){
+	spatk=spatk+10;
+	atk=atk+10;
+	def=def+15;
+	spdef=spdef+15;
+
+	spatkstat=spatkstat+10;
+	atkstat=atkstat+10;
+	defstat=defstat+15;
+	spdefstat=spdefstat+15;
+
+	hpstat=hpstat+130;
+	hp=hpstat;
+
+	std::cout<<" "<<std::endl;
+	std::cout<<"The vanquished enemy soul strengthens your magic." <<std::endl;
+	std::cout<<"Your HP has been replenished"<<std::endl<<std::endl;
 }
 
 player::~player(){

@@ -18,7 +18,7 @@ int main(){
 	newgame.gameIntro();
 	game* gameptr=&newgame;
 
-	player reimu = player("Reimu",500,50,45,45,60);
+	player reimu = player("Reimu",650,50,45,45,60);
 
 	enemy enemy1 = enemy();
 	enemy enemy2 = enemy();
@@ -48,6 +48,8 @@ int main(){
 	firstbattle.addgameobject(fireenemyptr);
 	firstbattle.addgameobject(bossptr);
 	firstbattle.battlestart();
+
+	firstbattle.~battle();
 	
 	return 0;
 }

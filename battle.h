@@ -6,8 +6,6 @@
 #include "enemy.h"
 #include "game.h"
 #include "boss.h"
-#include "rock.h"
-#include "fire.h"
 
 class battle{
 public:

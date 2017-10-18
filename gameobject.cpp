@@ -102,6 +102,10 @@ void gameobject::attack4(){
 
 }
 
+void gameobject::levelup(){
+	
+}
+
 
 void gameobject::checkhpover(){
 	if(hp>hpstat){
@@ -125,10 +129,6 @@ void gameobject::postbattlestatcheck(){
 
 	if(spatk>spatkstat){
 		spatk=spatkstat;
-	}
-
-	if(spd>spdstat){
-		spd=spdstat;
 	}
 }
 
@@ -168,6 +168,7 @@ int gameobject::getcurrentdef(){
 }
 
 
+
 void gameobject::changename(std::string newname){
 	name=newname;
 }
@@ -183,6 +184,7 @@ void gameobject::changeatkstat(int newatk){
 void gameobject::changedefstat(int newdef){
 	defstat=newdef;
 }
+
 
 gameobject::~gameobject(){
 

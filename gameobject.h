@@ -15,7 +15,6 @@ public:
 	int hpstat;
 	int atkstat;
 	int defstat;
-	int spdstat;
 	int spdefstat;
 	int spatkstat;
 	
@@ -24,11 +23,10 @@ public:
 	int hp;
 	int atk;
 	int def;
-	int spd;
 	int spdef;
 	int spatk;
 	
-	int type=0;
+	int atktype;
 	bool ismagic;
 	int dmgout;
 
@@ -51,6 +49,9 @@ public:
 	virtual void attack3()=0;
 	virtual void attack4()=0;
 
+	//level up
+	virtual void levelup()=0;
+
 	
 	//constructors
 	gameobject();
@@ -64,6 +65,7 @@ public:
 	void checkhpover();
 
 	int dmgoutput();
+	int atktypeoutput();
 	bool magicoutput();
 
 
