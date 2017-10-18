@@ -93,7 +93,9 @@ void player::levelup(){
 	hpstat=hpstat+50;
 	hp=hpstat;
 
+	std::cout<<" "<<std::endl;
 	std::cout<<"The vanquished enemy soul strengthens your magic." <<std::endl;
+	std::cout<<"Your HP has been replenished"<<std::endl<<std::endl;
 }
 
 player::~player(){

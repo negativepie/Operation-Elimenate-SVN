@@ -90,6 +90,8 @@ void battle::menu(){
 				std::cout<<" "<<std::endl;
 				std::cout<<"Reimu gets stronger by absorbing the souls of defeated foes. Vanquish the elemental lords so that she can take down the final boss"<<std::endl;
 				std::cout<<" "<<std::endl;
+				std::cout<<"Watch out for the weather, especially sandstorm and hail!"<<std::endl;
+				std::cout<<" "<<std::endl; 
 			}
 			if(menu_status=="3"){
 				std::cout<<"Reimu is a magical girl fighting evil monsters trying to take over the Earth."<<std::endl;
@@ -211,22 +213,26 @@ void battle::next_turn(){
 	} 
 
 	else{
-		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl<<std::endl;
+		std::cout << battlearray[which_enemy]->getname() << " has been slain" << std::endl;
 
 		switch(which_enemy){ //going to turn this into a switch statement
 
 		case 1:
-		std::cout<<battlearray[0]->getname()<<" has leveled up to level 2!"<<std::endl<<std::endl;
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 2!"<<std::endl;
 		battlearray[0]->levelup();
-		
-		break;
+		std::cout<<battlearray[0]->getname()<<" has been promoted to an apprentice magician!"<<std::endl<<std::endl;
+        break;
 
 		case 2:
-		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl<<std::endl;
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl;
+		battlearray[0]->levelup();
+		std::cout<<battlearray[0]->getname()<<" has been promoted to a graduate magician!"<<std::endl<<std::endl;
 		break;
 
 		case 3:
-		std::cout<<battlearray[0]->getname()<<" has leveled up to level 3!"<<std::endl<<std::endl;
+		std::cout<<battlearray[0]->getname()<<" has leveled up to level 4!"<<std::endl;
+		battlearray[0]->levelup();
+		std::cout<<battlearray[0]->getname()<<" has been promoted to a master magician!"<<std::endl<<std::endl;
 		break;
 		}
 
