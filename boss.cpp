@@ -2,8 +2,8 @@
 #include <iostream>
 
 boss::boss(){
- cry="You will never get past me. You shall fail OOP!";
- death_cry="BOOM. I suppose you should ADDS........";
+ cry=" You will never get past me. You shall fail OOP!";
+ death_cry="BOOM. I suppose you should take ADDS next........";
  name="SVN Marking System";
 }
 
@@ -12,19 +12,19 @@ void boss::basicattack(){
 }
 
 void boss::attack1(){
- std::cout<<"Boss Attack 1!"<<std::endl<<std::endl;
+ std::cout<<"Unforgiving Scripts"<<std::endl<<std::endl;
 }
 
 void boss::attack2(){
- std::cout<<"Boss Attack 2!"<<std::endl<<std::endl;
+ std::cout<<"SVN Error"<<std::endl<<std::endl;
 }
 
 void boss::attack3(){
- std::cout<<"Boss Attack 3!"<<std::endl<<std::endl;
+ std::cout<<"You Missed a Space!"<<std::endl<<std::endl;
 }
 
 void boss::attack4(){
- std::cout<<"Boss Attack 4!"<<std::endl<<std::endl;
+ std::cout<<"Syntax Error"<<std::endl<<std::endl;
 }
 
 

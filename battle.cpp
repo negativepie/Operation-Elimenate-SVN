@@ -39,7 +39,8 @@ battle::battle(player user, boss enemy1,enemy enemy2, enemy enemy3, game* gamein
 	std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
 	std::cout <<" "<<std::endl;
 
-	std::cout<<battlearray[1]->getname() << " jumps forward and says " << battlearray[1]->get_cry()<<std::endl;
+	std::cout<<battlearray[1]->getname() << "lunges foward." <<std::endl;
+	std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
 	
 	next_turn();
 }

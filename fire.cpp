@@ -4,6 +4,7 @@
 fire::fire(){
  cry="You shall all be burnt to a crisp.";
  death_cry=" and now only flickering embers remain.";
+ name="Shinmyoumaru Sukuna";
 }
 
 void fire::basicattack(){
@@ -15,7 +16,7 @@ void fire::attack1(){
 }
 
 void fire::attack2(){
- std::cout<<"Heat Wave"<<std::endl<<std::endl;
+ std::cout<<"Flare Blitz"<<std::endl<<std::endl;
 }
 
 void fire::attack3(){
@@ -23,7 +24,7 @@ void fire::attack3(){
 }
 
 void fire::attack4(){
- std::cout<<"Great Combustion"<<std::endl<<std::endl;
+ std::cout<<"Fire Punch"<<std::endl<<std::endl;
 }
 
 
