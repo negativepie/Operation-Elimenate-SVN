@@ -9,26 +9,31 @@ fire::fire(){
 
 void fire::basicattack(){
  ismagic=false;
+ dmgout=30;
  std::cout<<"Basic Punch"<<std::endl<<std::endl;
 }
 
 void fire::attack1(){
  ismagic=true;
+ dmgout=20;
  std::cout<<"Flamethrower"<<std::endl<<std::endl;
 }
 
 void fire::attack2(){
  ismagic=false;
+ dmgout=25;
  std::cout<<"Flare Blitz"<<std::endl<<std::endl;
 }
 
 void fire::attack3(){
  ismagic=true;
+ dmgout=40;
  std::cout<<"Great Chaos Fireball"<<std::endl<<std::endl;
 }
 
 void fire::attack4(){
- ismagic=false; 
+ ismagic=false;
+ dmgout=50; 
  std::cout<<"Fire Punch"<<std::endl<<std::endl;
 }
 

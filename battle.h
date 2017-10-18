@@ -14,6 +14,7 @@ public:
 	//
 
 	std::string atknumber;
+	std::string menu_status;
 	int random;
 	int currentturn;
 	int currentlyattacking;
@@ -24,7 +25,8 @@ public:
 	gameobject** battlearray;
 	game* gamestate;
 
-	
+	bool menu_choosing;
+
 
 	//
 	//functions
@@ -39,6 +41,7 @@ public:
 	void next_turn();
 	void weather_effect();
 	void menu();
+	void menuflip();
 	void addgameobject(gameobject *object);
 	void battlestart();
 	~battle();

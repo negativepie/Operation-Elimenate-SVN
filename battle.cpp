@@ -30,7 +30,12 @@ void battle::battlestart(){
 	currentturn=0;
 	currentlyattacking=0;
 	ischoosing=true;
-	
+
+	menu_choosing=true;
+
+	menu();
+
+/*	
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 	std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
 	std::cout <<" "<<std::endl;
@@ -39,6 +44,8 @@ void battle::battlestart(){
 	std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
 	
 	next_turn();
+
+	*/
 }
 
 void battle::addgameobject(gameobject *object){
@@ -55,10 +62,47 @@ void battle::addgameobject(gameobject *object){
 
 void battle::menu(){
 	std::cout<<"Welcome to Touhou Text RPG!"<<std::endl<<std::endl;
-	std::cout<<"Enter 1 to start"<<std::endl;
-	std::cout<<"Enter 2 for help"<<std::endl;
-	std::cout<<"Enter 3 for lore"<<std::endl;
-	std::cout<<"Enter 4 for credits"<<std::endl;
+	std::cout<<"Enter 0 to start"<<std::endl;
+	std::cout<<"Enter 1 for help"<<std::endl;
+	std::cout<<"Enter 2 for lore"<<std::endl;
+	std::cout<<"Enter 3 for credits"<<std::endl;
+
+	while(menu_choosing==true){
+		std::cin>> menu_status;
+
+			if(menu_status=="0"){
+					std::cout<<" "<<std::endl;
+					std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
+					std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
+					std::cout <<" "<<std::endl;
+
+					std::cout<<battlearray[1]->getname() << " lunges foward." <<std::endl;
+					std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
+				    next_turn();
+			}
+			if(menu_status=="1"){
+				std::cout<<"You need to defeat all the enemies to win. You have 5 attacks to choose from."<<std::endl;
+				std::cout<<"0-Basic Attack"<<std::endl;
+				std::cout<<"1-Supersonic Elemental Drill!"<<std::endl;
+				std::cout<<"2-Demon Sealing Prayer: Holy Life Steal!"<<std::endl;
+				std::cout<<"3-Max Power Bullet Barrage"<<std::endl;
+				std::cout<<"4-Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl;
+				std::cout<<" "<<std::endl;
+				std::cout<<"Reimu gets stronger by absorbing the souls of defeated foes. Vanquish the elemental lords so that she can take down the final boss"<<std::endl;
+				std::cout<<" "<<std::endl;
+			}
+			if(menu_status=="2"){
+				std::cout<<"Reimu is a magical girl fighting evil monsters trying to take over the Earth."<<std::endl;
+				std::cout<<"Defeat them all and restore peace to the world!"<<std::endl;
+			}
+			if(menu_status=="3"){
+				std::cout<<"This game was proudly brought to to you by Negativepie,Noramia and Kate98!"<<std::endl;
+			}
+	}
+}
+
+void menuflip(){
+
 }
 
 void battle::battleturn(){
