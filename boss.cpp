@@ -11,15 +11,21 @@ void boss::basicattack(){
  atktype=0;
  ismagic=false;
  dmgout=100;
- std::cout<<"Boss Attack!"<<std::endl<<std::endl;
+ std::cout<<"Unbalanced Weighting"<<std::endl<<std::endl;
 }
 
 void boss::attack1(){
+ atktype=0;
+ ismagic=true;
+ dmgout=100;
  std::cout<<"Unforgiving Scripts"<<std::endl<<std::endl;
 }
 
 void boss::attack2(){
- std::cout<<"SVN Error"<<std::endl<<std::endl;
+ atktype=1;
+ ismagic=true;
+ dmgout=90;
+ std::cout<<"You Had a Space!!"<<std::endl<<std::endl;
 }
 
 void boss::attack3(){
@@ -33,7 +39,7 @@ void boss::attack3(){
  spdef=9999;
  spatk=9999;
 
- std::cout<<"You Missed a Space!"<<std::endl<<std::endl;
+ std::cout<<"You Missed a Space!!"<<std::endl<<std::endl;
 }
 
 void boss::attack4(){

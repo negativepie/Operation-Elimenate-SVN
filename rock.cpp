@@ -8,23 +8,28 @@ rock::rock(){
 }
 
 void rock::basicattack(){
- std::cout<<"Basic Punch"<<std::endl<<std::endl;
+ ismagic=false;
+ std::cout<<"Rock Punch"<<std::endl<<std::endl;
 }
 
 void rock::attack1(){
+ ismagic=false; 
  std::cout<<"Crunch"<<std::endl<<std::endl;
 }
 
 void rock::attack2(){
+ ismagic=false;
  std::cout<<"Rock Slide"<<std::endl<<std::endl;
 }
 
 void rock::attack3(){
+ ismagic=false;
  std::cout<<"Sand Attack"<<std::endl<<std::endl;
 }
 
 void rock::attack4(){
- std::cout<<"Earthquake"<<std::endl<<std::endl;
+ismagic=false;
+std::cout<<"Earthquake"<<std::endl<<std::endl;
 }
 
 

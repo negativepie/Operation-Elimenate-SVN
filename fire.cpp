@@ -8,22 +8,27 @@ fire::fire(){
 }
 
 void fire::basicattack(){
+ ismagic=false;
  std::cout<<"Basic Punch"<<std::endl<<std::endl;
 }
 
 void fire::attack1(){
+ ismagic=true;
  std::cout<<"Flamethrower"<<std::endl<<std::endl;
 }
 
 void fire::attack2(){
+ ismagic=false;
  std::cout<<"Flare Blitz"<<std::endl<<std::endl;
 }
 
 void fire::attack3(){
+ ismagic=true;
  std::cout<<"Great Chaos Fireball"<<std::endl<<std::endl;
 }
 
 void fire::attack4(){
+ ismagic=false; 
  std::cout<<"Fire Punch"<<std::endl<<std::endl;
 }
 
