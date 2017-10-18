@@ -5,45 +5,27 @@
 
 class gameobject{
 public:
-
-	//
-	//state variables
-	//
-
-	//constant state variables
-	std::string name;
-	int hpstat;
-	int atkstat;
-	int defstat;
-	int spdstat;
-	int spdefstat;
-	int spatkstat;
 	
-
-	//battle variables
+	//state variables
+	std::string name;
 	int hp;
+	int fixedhp;
 	int atk;
 	int def;
 	int spd;
-	int spdef;
-	int spatk;
+	bool isdead=false;
+
+	int getcurrenthp();
+	int getcurrentatk();
+	int getcurrentdef();
+	int getcurrentspd();
+	virtual std::string getname();
 	
-	int type=0;
-	int atktype;
-	bool ismagic;
-	int dmgout;
-
-	//sounds
-	std::string cry;
-	std::string death_cry;
-
-	//sound functions
-	void set_cry(std::string sound);
-	void set_death_cry(std::string sound);
-
-	virtual std::string get_cry();
-	virtual std::string get_death_cry(); 
-
+	void changename(std::string newname);
+	void changehpstat(int newhp);
+	void changeatkstat(int newatk);
+	void changedefstat(int newdef);
+	void changespdstat(int newspd);
 	
 	//attack functions
 	virtual void basicattack()=0;
@@ -52,42 +34,10 @@ public:
 	virtual void attack3()=0;
 	virtual void attack4()=0;
 
-	
-	//constructors
-	gameobject();
-
-	//death checking and damage
+	//death check function
 	bool dead();
 	void takedmg(int dmg, int incomingatktype, bool isincomingmagic);
 	int check_hp();
-
-	void postbattlestatcheck();
-	void checkhpover();
-
-	int dmgoutput();
-	int atktypeoutput();
-	bool magicoutput();
-
-
-	std::string getname();
-	int gethpstat();
-	int getatkstat();
-	int getdefstat();
-	int getspdstat();
-
-	int getcurrenthp();
-	int getcurrentatk();
-	int getcurrentdef();
-	int getcurrentspd();
-
-	void changename(std::string newname);
-	void changehpstat(int newhp);
-	void changeatkstat(int newatk);
-	void changedefstat(int newdef);
-	void changespdstat(int newspd);
-
-	//destructor
-	~gameobject();
 
 };
 

@@ -2,9 +2,9 @@
 #include <iostream>
 
 boss::boss(){
- cry="You will never get past me. You shall fail OOP!";
- death_cry="BOOM. I suppose you should ADDS........";
- name="SVN Marking System";
+	name = "SVN";
+ //cry="missing boss cry";
+ //death_cry="missing death cry";
 }
 
 void boss::basicattack(){
@@ -27,7 +27,7 @@ void boss::attack4(){
  std::cout<<"Boss Attack 4!"<<std::endl<<std::endl;
 }
 
-
+/*
 void boss::set_cry(std::string sound){
 	cry=sound;
 }
@@ -40,7 +40,7 @@ std::string boss::get_cry(){
 }
 std::string boss::get_death_cry(){
 	return death_cry;
-} 
+} */
 
 boss::~boss(){
 

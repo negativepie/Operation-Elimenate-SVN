@@ -3,82 +3,52 @@
 #include <iostream>
 
 player::player(){
-	name="Reimu Harukei";
-
-	hpstat=500;
-	atkstat=35;
-	spatkstat=30;
-	defstat=40;
-	spdefstat=15;
-	spdstat=65;
-
-	hp=hpstat;
-	atk=atkstat;
-	spatk=spatkstat;
-	def=defstat;
-	spdef=spdefstat;
-	spd=spdstat;
+	name="missingname";
+	hp=1;
+	atk=1;
+	def=1;
+	spd=1;
 }
 
-player::player(std::string initialname, int initialhp, int initialatk, int initialspatk, int initialspdef, int initialdef, int initialspd){
+player::player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd){
 	name=initialname;
+	hp=initialhp;
+	fixedhp = initialhp;
+	atk=initialatk;
+	def=initialspd;
+	spd=initialspd;
+}
 
-	hpstat=initialhp;
-	atkstat=initialatk;
-	spatkstat=initialspatk;
-	defstat=initialspd;
-	spdefstat=initialspdef;
-	spdstat=initialspd;
+std::string player::getname(){
+	return name;
+}
 
-	hp=hpstat;
-	atk=atkstat;
-	spatk=spatkstat;
-	def=defstat;
-	spdef=spdefstat;
-	spd=spdstat;
+void player::displaystats(){
+	std::cout << "Your Hp is " << hp << std::endl;
+	std::cout << "Your Attack is " << atk << std::endl;
+	std::cout << "Your Defense is " << def << std::endl;
+	std::cout << "Your Speed is " << spd << std::endl;
 }
 
 void player::basicattack(){
-	atktype=0;
-	ismagic=false;
-	dmgout=5;
-	std::cout<<name<<" Attacks with a basic attack!"<<std::endl<<std::endl;
+ std::cout<<"Basic Attack!"<<std::endl<<std::endl;
 }
 
 void player::attack1(){
-	atktype=std::rand()%5;
-	ismagic=false;
-	dmgout=15;
-	std::cout<<name<<" Used Supersonic Elemental Drill!"<<std::endl<<std::endl;
+ std::cout<<"Attack 1!"<<std::endl<<std::endl;
 }
 
 void player::attack2(){
-	atktype=0;
-	ismagic=true;
-	dmgout=15;
-
-	hp=hp+10;
-
-	checkhpover();
-
-	std::cout<<name<<" Used Demon Sealing Prayer: Holy Life Steal!"<<std::endl<<std::endl;
+ std::cout<<"Attack 2!"<<std::endl<<std::endl;
 }
 
 void player::attack3(){
-	atktype=0;
-	ismagic=true;
-	dmgout=25;
-	std::cout<<name<<" Used Max Power Bullet Barrage!"<<std::endl<<std::endl;
-	atk=atk+5;
+ std::cout<<"Attack 3!"<<std::endl<<std::endl;
 }
 
 void player::attack4(){
-	atktype=6;
-	ismagic=true;
-	dmgout=99;
-	std::cout<<name<<" Used Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl<<std::endl;
+ std::cout<<"Attack 4!"<<std::endl<<std::endl;
 }
 
 player::~player(){
-
 }

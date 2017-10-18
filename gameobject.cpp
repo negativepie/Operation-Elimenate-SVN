@@ -3,46 +3,6 @@
 #include <string>
 #include <math.h>
 
-gameobject::gameobject(){
-	//default values
-	name="missingname";
-
-	hpstat=500;
-	atkstat=1;
-	defstat=1;
-	spdstat=1;
-	spdefstat=1;
-	spatkstat=1;
-	cry="missing cry";
-	death_cry="missing death cry";
-
-	hp=hpstat;
-	atk=atkstat;
-	def=defstat;
-	spd=spdstat;
-	spdef=spdefstat;
-	spatk=spatkstat;
-
-	type=0;
-}
-
-void gameobject::set_cry(std::string sound){
-	cry=sound;
-}
-
-void gameobject::set_death_cry(std::string sound){
-	death_cry=sound;
-}
-
- std::string gameobject::get_cry(){
- 	return cry;
- }
-
- std::string gameobject::get_death_cry(){
- 	return death_cry;
- }
-
-
 bool gameobject::dead(){
 	if(hp<=0){
 		return true;
@@ -53,12 +13,12 @@ bool gameobject::dead(){
 }
 
 void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
-	if(isincomingmagic==true){
-		dmg=dmg+ceil(dmg/spdef);
+	if(isincomingmagic==false){
+		dmg=dmg+ceil(dmg/def); // but whose defense?
 	}
 
 	else{
-		dmg=dmg+ceil(dmg/def);
+		//dmg=dmg+ceil(dmg/spdef);
 	}
 
 	hp=hp-dmg;
@@ -66,109 +26,14 @@ void gameobject::takedmg(int dmg, int incomingatktype, bool isincomingmagic){
 	if(hp<0){
 		hp=0;
 	}
-
-	if(hp>hpstat){
-		hp=hpstat;
-	}
 }
-
-int gameobject::dmgoutput(){
-	if(ismagic==true){
-		return dmgout+spatk;
-	}
-
-	else{
-		return dmgout+atk;
-	}
-}
-
-int gameobject::atktypeoutput(){
-	return atktype;
-}
-
-bool gameobject::magicoutput(){
-	return ismagic;
-}
-
-void gameobject::basicattack(){
-
-}
-
-void gameobject::attack1(){
-
-}
-
-void gameobject::attack2(){
-
-}
-
-void gameobject::attack3(){
-
-}
-
-void gameobject::attack4(){
-
-}
-
-
-void gameobject::checkhpover(){
-	if(hp>hpstat){
-		hp=hpstat;
-	}
-}
-
-void gameobject::postbattlestatcheck(){
-
-	if(atk>atkstat){
-		atk=atkstat;
-	}
-
-	if(def>defstat){
-		def=defstat;
-	}
-
-	if(spdef>spdefstat){
-		spdef=spdefstat;
-	}
-
-	if(spatk>spatkstat){
-		spatk=spatkstat;
-	}
-
-	if(spd>spdstat){
-		spd=spdstat;
-	}
-}
-
 
 int gameobject::check_hp(){
 	return hp;
 }
 
-std::string gameobject::getname(){
-	return name;
-}
-
-int gameobject::gethpstat(){
-	return hpstat;
-}
-
-int gameobject::getatkstat(){
-	return atkstat;
-}
-
-int gameobject::getdefstat(){
-	return defstat;
-}
-
-int gameobject::getspdstat(){
-	return spdstat;
-}
-
-
-
-int gameobject::getcurrenthp(){
-	return hp;
+int gameobject::getcurrenthp(){  //set this to another hp stat, which is the initial, that way could call so the player could reheal
+	return fixedhp;
 }
 
 int gameobject::getcurrentatk(){
@@ -183,28 +48,47 @@ int gameobject::getcurrentspd(){
 	return spd;
 }
 
-
-
 void gameobject::changename(std::string newname){
 	name=newname;
 }
 
 void gameobject::changehpstat(int newhp){
-	hpstat=newhp;
+	hp=newhp;
 }
 
 void gameobject::changeatkstat(int newatk){
-	atkstat=newatk;
+	atk=newatk;
 }
 
 void gameobject::changedefstat(int newdef){
-	defstat=newdef;
+	def=newdef;
 }
 
 void gameobject::changespdstat(int newspd){
-	spdstat=newspd;
+	spd=newspd;
 }
 
-gameobject::~gameobject(){
-
+std::string gameobject::getname(){
+	return name;
 }
+
+/* void gameobject::basicattack(){
+ std::cout<<"Basic Attack!"<<std::endl;
+}
+
+void gameobject::attack1(){
+ std::cout<<"Attack 1!"<<std::endl;
+}
+
+void gameobject::attack2(){
+ std::cout<<"Attack 2!"<<std::endl;
+}
+
+void gameobject::attack3(){
+ std::cout<<"Attack 3!"<<std::endl;
+}
+
+void gameobject::attack4(){
+ std::cout<<"Attack 4!"<<std::endl;
+}
+ */

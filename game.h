@@ -1,8 +1,8 @@
+#include <iostream>
+#include "player.h"
+
 #ifndef GAME_H
 #define GAME_H
-
-#include <iostream>
-
 class game{
 
 int mode;
@@ -12,13 +12,13 @@ public:
 	const int play = 2;
 	const int gameover = 3;
 	const int pause = 4;
+	
+	std::string your_name;
+	
+	game(); 
+	void game_state(int selection);
+	std::string getname();
+    player character_type(int num);
 
-	//gamestate functions
-	void gameIntro();
-	void gamePause();
-	void gameOver();
-
-	//battle functions
 };
-
 #endif //GAME_H

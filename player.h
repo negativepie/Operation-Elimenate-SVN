@@ -7,20 +7,24 @@
 class player :public gameobject{
 public:
 
-	//
-	//functions
-	//
+	//constant state variables
+	std::string name;
 
 	//constructors
 	player();
-	player(std::string initialname, int initialhp, int initialatk, int initialspatk, int initialspdef, int initialdef, int initialspd);
+	player(std::string initialname, int initialhp, int initialatk, int initialdef, int initialspd);
+	
+	//getter functions
+	std::string getname();
+	
+	void displaystats();
 
 	//attack functions
-	void basicattack();
-	void attack1();
-	void attack2();
-	void attack3();
-	void attack4();
+	virtual void basicattack();
+	virtual void attack1();
+	virtual void attack2();
+	virtual void attack3();
+	virtual void attack4();
 
 	//destructor
 	~player();

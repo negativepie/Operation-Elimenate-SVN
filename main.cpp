@@ -3,48 +3,61 @@
 #include "enemy.h"
 #include "gameobject.h"
 #include "battle.h"
+#include "wizard.h"
+#include "fighter.h"
+#include "MONSTERA.h"
 #include "boss.h"
-#include <stdlib.h>
-#include <ctime>
 
 using namespace std;
 
 int main(){
-	srand(time(NULL));
 	game newgame = game();
-	newgame.gameIntro();
+	
+	//int begin_game;
+	
+	//cout << "Enter 1 to... ; Enter 2 to...; ... " << endl;
+	
+	//cin >> begin_game; 
+	
+	newgame.game_state(1);
+	
+	newgame.game_state(2);
+	
+	string name = newgame.getname();
+
+	//player user; 
+	//user = newgame.character_type(charc_type);
+	
+	player user1 = player(name,40,10,10,10);
+
+	player* user = &user1;
+	
+	//wizard user1 = wizard(name, 40, 5, 2, 3);
+	
 	game* gameptr=&newgame;
 
-	//e x t e n s i v e t e s t i n g
+	enemy enemyC = enemy();
+	enemy enemyB = enemy();
+	enemy enemyD = enemy();
+	enemy enemyE = enemy();
+	boss SVN = boss();
+	MONSTERA enemyA = MONSTERA();
 
-	player reimu = player("Reimu",500,420,30,40,15,65);
+	enemy* enemy1 = &enemyA;
+	enemy* enemy2 = &enemyB;
+	enemy* enemy3 = &enemyC;
+	enemy* enemy4 = &enemyD;
+	enemy* enemy5 = &enemyE;
+	enemy* svnboss = &SVN;
 
-	//player reimu = player();
+	enemy3->changename("Monster A");
+	enemy2->changename("Monster B");
+	//enemy3.changename("Monster C");
 
-	enemy enemy1 = enemy();
-	enemy enemy2 = enemy();
-	enemy enemy3 = enemy();
-
-	boss boss1= boss();
-
-	enemy1.changename("Monster A");
-	enemy2.changename("Monster B");
-	enemy3.changename("Monster C");
-
-	//player * reimuptr = &reimu;
-	//enemy * enemyptr = &basicenemy;
-
-	battle firstbattle = battle(reimu,boss1,enemy2,enemy3,gameptr);
-	//std::cout << reimu.getname() << " you are now in a battle with a " << basicenemy.getname() << std::endl;
-	//firstbattle.chooseatk();
-
-	/*
-	//name and stats testing testing
-	std::cout << "The name of your player is " << reimu.getname() << std::endl;
-	reimu.changename("Marisa Kirisame");
-	std::cout << "The name of your player is now " << reimu.getname() << std::endl;
-	*/
+	battle firstbattle = battle(user,enemy1,enemy2,enemy3,gameptr);
 	
+	battle secondbattle = battle(user,enemy4,enemy5,svnboss,gameptr);	
+
 	return 0;
 	
 }

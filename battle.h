@@ -5,7 +5,6 @@
 #include "player.h"
 #include "enemy.h"
 #include "game.h"
-#include "boss.h"
 
 class battle{
 public:
@@ -21,6 +20,9 @@ public:
 	int which_enemy;
 	int weather;
 	bool ischoosing;
+	int damage=0;
+	int reheal;
+
 	gameobject** battlearray;
 	game* gamestate;
 
@@ -29,7 +31,7 @@ public:
 	//
 
 	battle();
-	battle(player user, boss enemy1,enemy enemy2, enemy enemy3,game* gameinput);
+	battle(player* user, enemy* enemy1,enemy* enemy2, enemy* enemy3,game* gameinput);
 	void chooseatk();
 	void battleturn();
 	void removeobject(int i);
