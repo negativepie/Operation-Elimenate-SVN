@@ -37,8 +37,13 @@ int main(){
 	enemy * enemyptr3 = &enemy3;
 	boss * bossptr=&boss1;
 
-	battle firstbattle = battle(reimuptr,bossptr,enemyptr2,enemyptr3,gameptr);
+	battle firstbattle = battle(gameptr);
+	firstbattle.addgameobject(reimuptr);
+	firstbattle.addgameobject(enemyptr1);
+	firstbattle.addgameobject(enemyptr2);
+	firstbattle.addgameobject(enemyptr3);
+	firstbattle.addgameobject(bossptr);
+	firstbattle.battlestart();
 	
 	return 0;
-	
 }

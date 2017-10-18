@@ -31,7 +31,7 @@ public:
 	//
 
 	battle();
-	battle(player *user, boss *enemy1,enemy *enemy2, enemy *enemy3,game* gameinput);
+	battle(game* gameinput);
 	void chooseatk();
 	void battleturn();
 	void removeobject(int i);
@@ -39,6 +39,8 @@ public:
 	void next_turn();
 	void weather_effect();
 	void menu();
+	void addgameobject(gameobject *object);
+	void battlestart();
 	~battle();
 
 };

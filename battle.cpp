@@ -15,36 +15,42 @@
 battle::battle(){
 }
 
-battle::battle(player *user, boss *enemy1,enemy *enemy2, enemy *enemy3, game* gameinput){ //just pass through pointers
-	
-	battlearray=new gameobject*[4];
-	battlearray[0]=user;
-	battlearray[1]=enemy1;
-	battlearray[2]=enemy2;
-	battlearray[3]=enemy3;
-	
+battle::battle(game* gameinput){ //just pass through pointers
+	participants=0;
+	battlearray=new gameobject*[participants];
 	
 	int random_weather=std::rand()%5;
 	weather=random_weather;
 	
 	gamestate=gameinput;
+}
 
+void battle::battlestart(){
 	which_enemy=1;
 	currentturn=0;
 	currentlyattacking=0;
-	participants=4;
 	ischoosing=true;
-
-	//menu stuff
-
+	
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
 	std::cout << "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
 	std::cout <<" "<<std::endl;
 
-	std::cout<<battlearray[1]->getname() << "lunges foward." <<std::endl;
+	std::cout<<battlearray[1]->getname() << " lunges foward." <<std::endl;
 	std::cout<< battlearray[1]->get_cry()<<std::endl<<std::endl;
 	
 	next_turn();
+}
+
+void battle::addgameobject(gameobject *object){
+	participants++;
+	gameobject **temparray=new gameobject*[participants];
+		for(int i=0;i<participants-1;i++){
+			temparray[i]=battlearray[i];
+			
+		}
+		delete[]battlearray;
+		battlearray=temparray;
+		battlearray[participants-1]=object;
 }
 
 void battle::menu(){
