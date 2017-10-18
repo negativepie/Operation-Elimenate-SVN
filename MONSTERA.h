@@ -15,8 +15,6 @@
 
 class MONSTERA : public enemy{
 	
-	// should also redefine the stats here based on enemy type.
-	
 	public:
 	
 	MONSTERA();
@@ -26,6 +24,8 @@ class MONSTERA : public enemy{
 	void attack2();
 	void attack3();
 	void attack4();
+
+	~MONSTERA();
 		
 };
 #endif //MONSTERA_H

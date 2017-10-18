@@ -3,6 +3,10 @@
 
 boss::boss(){
 	name = "SVN";
+	hp = 100;
+	atk = 20;
+	def = 20;
+	spd = 10;
  //cry="missing boss cry";
  //death_cry="missing death cry";
 }

@@ -10,7 +10,6 @@ MONSTERA::MONSTERA(){
 	spd = 6;
 }
 
-//these attacks aren't being implemented
 void MONSTERA::basicattack(){
 	std::cout << "Tackle!"<< std::endl;
 }
@@ -34,3 +33,5 @@ void MONSTERA::attack4(){
 //	dmg = atkstat - //defstat;
 }
 
+MONSTERA::~MONSTERA(){
+}

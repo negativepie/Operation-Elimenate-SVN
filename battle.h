@@ -34,7 +34,6 @@ public:
 	battle(player* user, enemy* enemy1,enemy* enemy2, enemy* enemy3,game* gameinput);
 	void chooseatk();
 	void battleturn();
-	void removeobject(int i);
 	void enemyatk();
 	void next_turn();
 	void weather_effect();

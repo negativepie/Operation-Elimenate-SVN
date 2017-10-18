@@ -37,8 +37,7 @@ battle::battle(player* user, enemy* enemy1,enemy* enemy2, enemy* enemy3, game* g
 	currentlyattacking=0;
 	participants=4;
 	std::cout << battlearray[0]->getname() << " you are now in a battle with a " << battlearray[which_enemy]->getname() << std::endl;
-	std::cout<< "Basic Attack:0, Special Attacks: 1-4"<<std::endl;		
-	//std::cout<<" "<<std::endl;
+	std::cout<< "Basic Attack:0, Special Attacks: 1-4"<<std::endl;
 	next_turn();
 }
 
@@ -54,13 +53,12 @@ void battle::chooseatk(){
 		while(ischoosing==true){
 			std::cin >> atknumber;
 
-			if(atknumber=="0"){ //could use an attack array here to speed things up
+			if(atknumber=="0"){
 				ischoosing=false;
 				damage = battlearray[0]->getcurrentatk(); //will find particular attack strength with another function
 				battlearray[which_enemy]->takedmg(damage,0,false);
 				battlearray[0]->basicattack();
 				std::cout<< battlearray[which_enemy]->getname() <<" has "<< battlearray[which_enemy]->check_hp() <<"  hp" <<std::endl<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="1"){
@@ -68,7 +66,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(1,0,false);
 				battlearray[0]->attack1();
 				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="2"){
@@ -76,7 +73,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(2,0,false);
 				battlearray[0]->attack2();
 				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="3"){
@@ -84,7 +80,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(3,0,false);
 				battlearray[0]->attack3();
 				std::cout<< battlearray[which_enemy]->getname() <<" has "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="4"){
@@ -92,7 +87,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(4,0,false);
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl<<std::endl;
-				//ischoosing=true;
 			}
 
 			else{
@@ -211,7 +205,7 @@ void battle::weather_effect(){
 }
 
 battle::~battle(){
-	//delete[] battlearray;
+	delete[] battlearray;
 }
 
 
