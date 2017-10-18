@@ -3,6 +3,7 @@
 Place '.' in '()' when a task is complete like so (.)
 
 # Code is mostly functional, yay!?
+# code now works (Kate98-it-works-patch-1)
 
 # NOTE
 
@@ -10,7 +11,7 @@ Place '.' in '()' when a task is complete like so (.)
 
 # Coding
 
-- Name input ()
+- Name input (.)
 - Make text nice and neat ()
 - Weather (.) (Functional, needs text added for all cases)
 - Stats (Defese, Magic Defense) (.)
