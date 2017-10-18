@@ -14,45 +14,46 @@ using namespace std;
 int main(){
 	game newgame = game();
 	
-	newgame.game_state(1);
+	//newgame.game_state(1);
 	
-	newgame.game_state(2);
+	//newgame.game_state(2);
 	
-	string name = newgame.getname();
+	//string name = newgame.getname();
 
-	player user1 = player(name,40,10,10,10);
+	//player user1 = player(name,40,10,10,10);
+	player user1 = player("Harry",50,10,10,10);
 
 	player* user = &user1;
 	
 	game* gameptr=&newgame;
 
-	MONSTERA enemyA = MONSTERA();
-	monsterb enemyC = monsterb();
+	//MONSTERA enemyA = MONSTERA();
+	//monsterb enemyC = monsterb();
 	enemy enemyB = enemy();
 	enemy enemyD = enemy();
 	enemy enemyE = enemy();
-	boss SVN = boss();
+	//boss SVN = boss();
 	
 
-	enemy* enemy1 = &enemyA;
+	//enemy* enemy1 = &enemyA;
 	enemy* enemy2 = &enemyB;
-	enemy* enemy3 = &enemyC;
+	//enemy* enemy3 = &enemyC;
 	enemy* enemy4 = &enemyD;
 	enemy* enemy5 = &enemyE;
-	enemy* svnboss = &SVN;
+	//enemy* svnboss = &SVN;
 
 	//enemy3->changename("Monster A");
-	enemy2->changename("Monster B");
+	//enemy2->changename("Monster B");
 	//enemy3.changename("Monster C");
 
-	battle firstbattle = battle(user,enemy1,enemy2,enemy3,gameptr);
+	//battle firstbattle = battle(user,enemy1,enemy2,enemy3,gameptr);
 
-	user->changehpstat(50);
+	//user->changehpstat(50);
 	
-	battle secondbattle = battle(user,enemy4,enemy5,svnboss,gameptr);	
+	//battle secondbattle = battle(user,enemy4,enemy5,svnboss,gameptr);	
 
 	//testing
-	// battle test = battle(user, enemy2, enemy4, enemy5, gameptr);
+	battle test = battle(user, enemy2, enemy4, enemy5, gameptr);
 
 	return 0;
 	

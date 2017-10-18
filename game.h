@@ -18,7 +18,5 @@ public:
 	game(); 
 	void game_state(int selection);
 	std::string getname();
-    player character_type(int num);
-
 };
 #endif //GAME_H

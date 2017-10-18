@@ -1,0 +1,259 @@
+Harry you are now in a battle with a missingname
+Basic Attack:0, Special Attacks: 1-4
+The turn number is 1
+which attack would you like to use?
+Attack 4!
+
+missingname has 42 hp
+
+Attack 1!
+
+Harry has 49 hp
+ 
+The sun shines brightly
+
+The turn number is 2
+which attack would you like to use?
+Attack 4!
+
+missingname has 34 hp
+
+Attack 1!
+
+Harry has 48 hp
+ 
+The sun shines brightly
+
+The turn number is 3
+which attack would you like to use?
+Attack 4!
+
+missingname has 26 hp
+
+Attack 1!
+
+Harry has 47 hp
+ 
+The sun shines brightly
+
+The turn number is 4
+which attack would you like to use?
+Attack 4!
+
+missingname has 18 hp
+
+Attack 1!
+
+Harry has 46 hp
+ 
+The sun shines brightly
+
+The turn number is 5
+which attack would you like to use?
+Attack 4!
+
+missingname has 10 hp
+
+Attack 1!
+
+Harry has 45 hp
+ 
+The sun shines brightly
+
+The turn number is 6
+which attack would you like to use?
+Attack 4!
+
+missingname has 2 hp
+
+Attack 1!
+
+Harry has 44 hp
+ 
+The sun shines brightly
+
+The turn number is 7
+which attack would you like to use?
+Attack 4!
+
+missingname has 0 hp
+
+Attack 1!
+
+Harry has 43 hp
+ 
+The sun shines brightly
+
+missingname is defeated!
+
+The turn number is 8
+which attack would you like to use?
+Attack 4!
+
+missingname has 42 hp
+
+Attack 1!
+
+Harry has 49 hp
+ 
+The sun shines brightly
+
+The turn number is 9
+which attack would you like to use?
+Attack 4!
+
+missingname has 34 hp
+
+Attack 1!
+
+Harry has 48 hp
+ 
+The sun shines brightly
+
+The turn number is 10
+which attack would you like to use?
+Attack 4!
+
+missingname has 26 hp
+
+Attack 1!
+
+Harry has 47 hp
+ 
+The sun shines brightly
+
+The turn number is 11
+which attack would you like to use?
+Attack 4!
+
+missingname has 18 hp
+
+Attack 1!
+
+Harry has 46 hp
+ 
+The sun shines brightly
+
+The turn number is 12
+which attack would you like to use?
+Attack 4!
+
+missingname has 10 hp
+
+Attack 1!
+
+Harry has 45 hp
+ 
+The sun shines brightly
+
+The turn number is 13
+which attack would you like to use?
+Attack 4!
+
+missingname has 2 hp
+
+Attack 1!
+
+Harry has 44 hp
+ 
+The sun shines brightly
+
+The turn number is 14
+which attack would you like to use?
+Attack 4!
+
+missingname has 0 hp
+
+Attack 1!
+
+Harry has 43 hp
+ 
+The sun shines brightly
+
+missingname is defeated!
+
+The turn number is 15
+which attack would you like to use?
+Attack 4!
+
+missingname has 42 hp
+
+Attack 1!
+
+Harry has 49 hp
+ 
+The sun shines brightly
+
+The turn number is 16
+which attack would you like to use?
+Attack 4!
+
+missingname has 34 hp
+
+Attack 1!
+
+Harry has 48 hp
+ 
+The sun shines brightly
+
+The turn number is 17
+which attack would you like to use?
+Attack 4!
+
+missingname has 26 hp
+
+Attack 1!
+
+Harry has 47 hp
+ 
+The sun shines brightly
+
+The turn number is 18
+which attack would you like to use?
+Attack 4!
+
+missingname has 18 hp
+
+Attack 1!
+
+Harry has 46 hp
+ 
+The sun shines brightly
+
+The turn number is 19
+which attack would you like to use?
+Attack 4!
+
+missingname has 10 hp
+
+Attack 1!
+
+Harry has 45 hp
+ 
+The sun shines brightly
+
+The turn number is 20
+which attack would you like to use?
+Attack 4!
+
+missingname has 2 hp
+
+Attack 1!
+
+Harry has 44 hp
+ 
+The sun shines brightly
+
+The turn number is 21
+which attack would you like to use?
+Attack 4!
+
+missingname has 0 hp
+
+Attack 1!
+
+Harry has 43 hp
+ 
+The sun shines brightly
+
+missingname is defeated!
