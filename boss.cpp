@@ -2,8 +2,9 @@
 #include <iostream>
 
 boss::boss(){
- cry="missing boss cry";
- death_cry="missing death cry";
+ cry="You will never get past me. You shall fail OOP!";
+ death_cry="BOOM. I suppose you should ADDS........";
+ name="SVN Marking System";
 }
 
 void boss::basicattack(){

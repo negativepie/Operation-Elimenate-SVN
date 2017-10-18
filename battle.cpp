@@ -63,7 +63,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->basicattack();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="1"){
@@ -71,7 +70,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack1();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="2"){
@@ -79,7 +77,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack2();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="3"){
@@ -87,7 +84,6 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack3();
 				std::cout<< battlearray[which_enemy]->getname() <<" has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
 			}
 
 			else if(atknumber=="4"){
@@ -95,14 +91,13 @@ void battle::chooseatk(){
 				battlearray[which_enemy]->takedmg(battlearray[0]->dmgoutput(),battlearray[0]->atktypeoutput(),battlearray[0]->magicoutput());
 				battlearray[0]->attack4();
 				std::cout << battlearray[which_enemy]->getname() << "  has  "<<battlearray[which_enemy]->check_hp()<<"  hp"<<std::endl;
-				//ischoosing=true;
+
 			}
 
 			else{
 				std::cout << "you only have a basic attack (0) and 4 special attacks (1-4) at the moment, please choose a number between 1-4 for your basic attack" << std::endl;
 			}
 		}
-	//battleturn();
 	enemyatk();
 }
 
