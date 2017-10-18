@@ -52,6 +52,9 @@ public:
 	virtual void attack3()=0;
 	virtual void attack4()=0;
 
+	//level up
+	virtual void levelup()=0;
+
 	
 	//constructors
 	gameobject();

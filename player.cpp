@@ -79,6 +79,21 @@ void player::attack4(){
 	std::cout<<name<<" Used Eastern Spell of the Gensokyo Magical Girls: Bullet Hell!"<<std::endl<<std::endl;
 }
 
+void player::levelup(){
+	spatk=spatk+10;
+	atk=atk+10;
+	def=def+15;
+	spdef=spdef+15;
+
+	spatkstat=spatkstat+10;
+	atkstat=atkstat+10;
+	defstat=defstat+15;
+	spdefstat=spdefstat+15;
+
+	hpstat=hpstat+50;
+	hp=hpstat;
+}
+
 player::~player(){
 
 }

@@ -110,6 +110,10 @@ void gameobject::attack4(){
 
 }
 
+void gameobject::levelup(){
+	
+}
+
 
 void gameobject::checkhpover(){
 	if(hp>hpstat){
