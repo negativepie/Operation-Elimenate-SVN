@@ -8,7 +8,7 @@ Enter 3 for lore
 Enter 4 for credits
 
 Reimu you are now in a battle with a Lesser Demon
-Basic Attack:0, Special Attacks: 1-4
+Basic Attack:1, Special Attacks: 2-5
 Lesser Demon lunges foward.
 Grah!
 
